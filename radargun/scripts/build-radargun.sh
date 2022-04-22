@@ -4,5 +4,8 @@ PATH=$JAVA_HOME/bin:$PATH
 echo $JAVA_HOME
 echo $PATH
 java -version
+pushd
+mkdir work && cd work && git clone git@github.com:radargun/radargun.git && cd radargun
 JAVA_HOME=$JAVA_HOME mvn -v
 JAVA_HOME=$JAVA_HOME mvn clean install -DskipTests -Dmaven.javadoc.skip=true -Dno-chm -Dno-ehcache -Dno-jbosscache -Dno-zip -Dno-hazelcast -Dno-jgroups -Dno-redis -Dno-resteasy-http -Dno-spark -Dno-spymemcached -Dno-tomcat -Dno-etcd -Dno-docker -Dno-couchbase -Dno-eap -DskipTests -Dlog4j2
+popd
