@@ -1,8 +1,8 @@
 # Radargun
 
-In the conf directory there is a benchmark and a properties file to run just run Radargun clients.
+In the conf directory there is a benchmark and a properties file to just run run Radargun clients.
 This setup leaves to the user the freedom to start the Infinispan cluster with whatever configuration he's interested.
-Any impovement is welcome.
+Improvements are welcome.
 
 ## Helper scripts
 - `scripts/build-radargun.sh` download and build radargun for Infinispan
