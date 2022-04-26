@@ -1,6 +1,6 @@
 # Radargun
 
-In the conf directory there is a benchmark and a properties file to just run run Radargun clients.
+In the conf directory there is a benchmark and a properties file to just run Radargun clients.
 This setup leaves to the user the freedom to start the Infinispan cluster with whatever configuration he's interested.
 Improvements are welcome.
 
