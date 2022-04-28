@@ -17,7 +17,7 @@ Define the following environment variable:
 ## Run Radargun client in a pod
 Run:
 ```bash
-envsub < k8s-config/deployment-radargun-client.yaml | oc apply -f -
+envsubst < k8s-config/deployment-radargun-client.yaml | oc apply -f -
 ```
 `rsh` in the radargun pod and run the following:
 ```bash
