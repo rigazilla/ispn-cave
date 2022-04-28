@@ -15,6 +15,12 @@ Define the following environment variable:
 - `ISPN_SERVERS` Infinispan servers list (csv)
 
 ## Run Radargun client in a pod
+Login on a cluster pod and create a cache named `my-cache`:
+```bash
+bin/cli.sh --connect 127.0.0.1:11222
+create cache -t org.infinispan.DIST_ASYNC my-cache
+```
+Change the template to your favorite one.
 Run:
 ```bash
 envsubst < k8s-config/deployment-radargun-client.yaml | oc apply -f -
