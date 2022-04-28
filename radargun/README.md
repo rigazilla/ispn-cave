@@ -21,7 +21,7 @@ envsubst < k8s-config/deployment-radargun-client.yaml | oc apply -f -
 ```
 `rsh` in the radargun pod and run the following:
 ```bash
-./bin/main.sh -c conf/benchmark-hotrod-basic.yaml
+./bin/main.sh -c conf/benchmark-hotrod-basic.xml
 ./bin/worker.sh
 ```
 
