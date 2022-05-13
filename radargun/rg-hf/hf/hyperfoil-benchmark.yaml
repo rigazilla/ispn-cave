@@ -1,0 +1,56 @@
+name: hotrod-zulip-benchmark
+hotrod:
+ - uri: hotrod://10.130.0.11:11222
+   caches:
+    - my-cache
+agents:
+  agent-1:
+    stop: false
+  agent-2:
+    stop: false
+  agent-3:
+    stop: false
+phases:
+- rampupPut:
+    increasingRate:
+      duration: 10s
+      initialUsersPerSec: 100
+      targetUsersPerSec: 200
+      maxSessions: 300
+      scenario: &put
+      - putData:
+        - randomInt: cacheKey <- 1 .. 40000
+        - randomUUID: cacheValue
+        - hotrodRequest:
+            put: my-cache
+            key: key-${cacheKey}
+            value: value-${cacheValue}
+- rampupGet:
+    increasingRate:
+      duration: 10s
+      initialUsersPerSec: 100
+      targetUsersPerSec: 200
+      maxSessions: 300
+      scenario: &get
+      - getData:
+        - randomInt: cacheKey <- 1 .. 40000
+        - randomUUID: cacheValue
+        - hotrodRequest:
+            put: my-cache
+            key: key-${cacheKey}
+            value: value-${cacheValue}
+- doPut:
+    constantRate:
+      startAfter: rampupPut
+      duration: 5m
+      usersPerSec: 10000
+      maxSessions: 11000
+      scenario: *put
+- doGet:
+    constantRate:
+      startAfter: rampupGet
+      duration: 5m
+      usersPerSec: 40000
+      maxSessions: 41000
+      scenario: *get
+

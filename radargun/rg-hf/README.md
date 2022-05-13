@@ -30,4 +30,4 @@ spec:
 
 Infinispan Clients:  
 radargun: 1 client in OCP cluster. [result](rg/html/index.html)  
-hyperfoil: [report](hf/hyperfoil-zulip-benchmark-results.html)
+hyperfoil: [benchmark](hf/hyperfoil-benchmark.yaml) [result](hf/hyperfoil-zulip-benchmark-results.html)
