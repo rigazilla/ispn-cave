@@ -1,10 +1,9 @@
 # SCENARIO
 
-[BasicOperationsTest](html/index.html)
 
-OCP on Quicklab:
-1 master: 16Gb, 8 CPU
-3 workers: 8Gb , 4 CPU each
+OCP on Quicklab:  
+1 master: 16Gb, 8 CPU  
+3 workers: 8Gb , 4 CPU each  
 
 Infinispan Data grid:
 ```
@@ -29,6 +28,6 @@ spec:
     type: DataGrid
 ```
 
-Infinispan Clients:
-radargun: 1 client in OCP cluster. [result](rg/html/index.html)
+Infinispan Clients:  
+radargun: 1 client in OCP cluster. [result](rg/html/index.html)  
 hyperfoil: [report](hf/hyperfoil-zulip-benchmark-results.html)
