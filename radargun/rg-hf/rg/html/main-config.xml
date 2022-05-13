@@ -1,0 +1,77 @@
+<benchmark xmlns="urn:radargun:benchmark:3.0">
+
+    <!-- Specifies where should the main open socket -->
+    <main bindAddress="${main.address:127.0.0.1}" port="${main.port:2103}" />
+
+    <!-- List of cluster configurations where the benchmark should run -->
+    <clusters>
+        <cluster size="4">
+            <group name="client" size="1" />
+            <group name="echo" size="3" />
+        </cluster>
+    </clusters>
+
+    <!-- List of configurations of the services -->
+    <configurations>
+        <!-- Server setup -->
+        <config name="ISPN9 - hotrod">
+            <setup group="echo" plugin="echo">
+                <echo xmlns="urn:radargun:plugins:echo:3.0" />
+            </setup>
+            <!-- Client setup -->
+            <setup group="client" plugin="infinispan130">
+                <hotrod xmlns="urn:radargun:plugins:infinispan130:3.0">
+                    <properties-path>local-hotrod-client.properties</properties-path>
+                    <servers>${env.ISPN_SERVERS:127.0.0.1:11222}</servers>
+                </hotrod>
+                <vm-args>
+                    <memory max="1G" />
+                </vm-args>
+            </setup>
+        </config>
+    </configurations>
+
+    <!-- Sequence of stages executed on the cluster -->
+    <rg:scenario xmlns:rg="urn:radargun:benchmark:3.0" xmlns="urn:radargun:stages:core:3.0" xmlns:cache="urn:radargun:stages:cache:3.0" xmlns:l="urn:radargun:stages:legacy:3.0">
+        <!-- Start services on all nodes -->
+        <service-start />
+        <remote-monitor-start interface-name="eth0" jmx-service-url="service:jmx:rmi:///jndi/rmi://10.130.0.12:9999/jmxrmi" groups="echo"/>
+        <remote-monitor-start interface-name="eth0" jmx-service-url="service:jmx:rmi:///jndi/rmi://10.131.0.20:9999/jmxrmi" groups="echo"/>
+        <remote-monitor-start interface-name="eth0" jmx-service-url="service:jmx:rmi:///jndi/rmi://10.129.0.79:9999/jmxrmi" groups="echo"/>
+        <monitor-start groups="client"/>
+        <!-- Begin monitoring of CPU, memory usage and GC -->
+
+        <define var="entry.size" value="4588" />
+        <define var="cache.name" value="my-cache" />
+        <define var="num.entries" value="40000" />
+
+        <l:basic-operations-test groups="client" test-name="writes-get" num-operations="40000" num-threads-per-node="3" entry-size="${entry.size}" get-ratio="1" put-ratio="1">
+            <l:key-selector>
+                <l:concurrent-keys total-entries="${num.entries}" />
+            </l:key-selector>
+            <cache:cache-selector>
+                <cache:use-cache>
+                    <cache:cache>${cache.name}</cache:cache>
+                </cache:use-cache>
+            </cache:cache-selector>
+            <l:key-generator>
+                <string />
+            </l:key-generator>
+            <l:value-generator>
+                <byte-array />
+            </l:value-generator>
+            <statistics>
+                <common />
+            </statistics>
+        </l:basic-operations-test>
+
+        <!-- Stop JVM monitoring -->
+        <monitor-stop />
+        <service-stop />
+    </rg:scenario>
+
+    <!-- How the statistics are reported -->
+    <reports>
+        <reporter type="html" />
+    </reports>
+</benchmark>
