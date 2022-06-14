@@ -3,7 +3,10 @@ kind: Infinispan
 metadata:
   name: example-infinispan
 spec:
-  replicas: 1
+  replicas: 3
   security:
+    endpointAuthentication: false
     endpointEncryption:
       type: None
+  container:
+    extraJvmOpts: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.local.only=false -Dcom.sun.management.jmxremote.rmi.port=9999"
