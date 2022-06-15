@@ -1,0 +1,19 @@
+
+oc rsh example-infinispan-0
+sh-4.4$ bin/cli.sh --connect 127.0.0.1:11222
+[example-infinispan-0-49571@//containers/default]> create cache my-cache -t org.infinispan.DIST_ASYNC
+
+{
+  "distributed-cache" : {
+    "mode" : "ASYNC",
+    "statistics" : true,
+    "locking" : {
+      "concurrency-level" : "1000",
+      "acquire-timeout" : "15000",
+      "striping" : false
+    },
+    "state-transfer" : {
+      "timeout" : "60000"
+    }
+  }
+}

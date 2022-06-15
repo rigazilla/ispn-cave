@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: radargun
+spec:
+  selector:
+    matchLabels:
+      app: radargun-app
+  template:
+    metadata:
+      labels:
+        app: radargun-app
+    spec:
+      containers:
+        - name: radargun-app
+          image: quay.io/rigazilla/radargun-client
+          command: ["/bin/sh"]
+          args: ["-c", "sleep infinity"]
+          env:
+            - name: ISPN_USER
+              value: ${ISPN_USER}
+            - name: ISPN_PASSWORD
+              value: ${ISPN_PASSWORD}
+            - name: ISPN_SERVERS
+              value: ${ISPN_SERVERS}

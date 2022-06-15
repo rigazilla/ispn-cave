@@ -1,0 +1,1389 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Test writes-get</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="c3.css">
+    <script src="script.js"></script>
+    <script src="d3.v3.min.js"></script>
+    <script src="c3.min.js"></script>
+</head>
+<body>
+  <h1>Test writes-get</h1>
+
+ <!-- operation -->
+
+    <h2>Operation: BasicOperations.Get</h2>
+
+  <table class="graphTable">
+      <tr>
+    <th>
+      <br/>
+      Response time mean<br/>
+      <img src="writes-get_BasicOperations.Get_mean_dev_BasicOperations.Get.png"" alt="BasicOperations.Get">
+    </th>
+    <th>
+      <br/>
+      Operation throughput<br/>
+      <img src="writes-get_BasicOperations.Get_throughput_net_BasicOperations.Get.png"" alt="BasicOperations.Get">
+    </th>
+      </tr>
+      <tr>
+    <th>
+      <br/>
+      Response time over time<br/>
+      <img src="writes-get_BasicOperations.Get_mean_dev_series_BasicOperations.Get.png"" alt="BasicOperations.Get">
+    </th>
+    <th>
+      <br/>
+      Requests progression<br/>
+      <img src="writes-get_BasicOperations.Get_requests_series_BasicOperations.Get.png"" alt="BasicOperations.Get">
+    </th>
+      </tr>
+      <tr>
+    <th>
+      <br/>
+      Operation throughput over time<br/>
+      <img src="writes-get_BasicOperations.Get_throughput_net_series_BasicOperations.Get.png"" alt="BasicOperations.Get">
+    </th>
+  </table>
+    <br>
+
+      <table>
+
+        <col/>
+        <col/>
+        <col/>
+        <col/>
+
+        <col/>
+        <col/>
+        <col/>
+        <col/>
+
+
+
+            <col id="RTM at 50 %">
+            <col id="RTM at 90 %">
+            <col id="RTM at 95 %">
+            <col id="RTM at 99 %">
+            <col id="RTM at 99.9 %">
+            <col id="RTM at 99.99 %">
+
+          <col id="histograms">
+
+        <tr>
+          <th colspan="4"> Configuration writes-get</th>
+          <th>requests</th>
+          <th>errors</th>
+          <th>latency mean</th>
+          <th>latency std.dev</th>
+          <th>latency max</th>
+
+
+              <th>RTM at 50 %</th>
+              <th>RTM at 90 %</th>
+              <th>RTM at 95 %</th>
+              <th>RTM at 99 %</th>
+              <th>RTM at 99.9 %</th>
+              <th>RTM at 99.99 %</th>
+
+            <th>histograms</th>
+        </tr>
+
+
+
+
+
+
+          <tr>
+            <th rowspan= 5 onClick="switch_class_by_class('h_1','expanded','collapsed')" class="onClick">
+              <img class="h_1 expanded" src="ic_arrow_drop_down_black_24dp.png">
+              <img class="h_1 collapsed" src="ic_arrow_drop_up_black_24dp.png">
+            </th>
+            <th rowspan= 5 >ISPN9 - hotrod</th>
+            <th rowspan= 5 >Cluster[client=1, echo=3]</th>
+
+
+
+
+              <th>Iteration 0</th>
+
+
+
+
+
+    <td class=" firstCellStyle" title="">
+      1,042
+    </td>
+    <td class=" rowStyle errorData" title="">
+      0
+    </td>
+
+      <td class=" rowStyle" title="">
+        3.37&nbsp;ms
+      </td>
+      <td class=" rowStyle" title="">
+        5.73&nbsp;ms
+      </td>
+
+    <td class=" rowStyle" title="">
+    101.71&nbsp;ms
+    </td>
+
+
+
+
+        <td class=" rowStyle" title="">
+          1.54&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          8.36&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          12.65&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          26.21&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          44.83&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          101.71&nbsp;ms
+        </td>
+
+  <!-- TODO: currently the charts for each configuration are generated multiple times;
+             it would be nicer to have them only once, but that would require another loop
+             through all clusters/iterations/nodes/threads. On the other hand the chart
+             is created when opened and destroyed when closed, so it doesn't waste
+             all the resources in runtime. -->
+    <td class=" rowStyle" title="">
+      
+      <div id="gh1" class="glasspanel" style="display: none">
+        <a href="javascript: void(0);" class="popup_close" onclick="parentElement.style.display='none'; chartInPanel = chartInPanel.destroy();">Close X</a>
+  <div id="h1" class="popup_block"></div>
+  <script type="text/javascript">
+     function ch1() {
+       return c3.generate({
+         bindto: "#h1",
+         size: {
+           width: 800,
+           height: 600
+         },
+         padding: {
+           right: 35, top: 20
+         },
+         data: {
+           type: 'step',
+           names: {
+               line0: 'ISPN9 - hotrod',
+           },
+           x: 'x',
+           columns: [
+               [ 'x', 5.2552, 5.3099, 5.3647, 5.4195, 5.4742, 5.529, 5.5838, 5.6386, 5.6933, 5.7481, 5.8029, 5.8576, 5.9124, 5.9672, 6.0219, 6.0767, 6.1315, 6.1862, 6.241, 6.2958, 6.3505, 6.4053, 6.4601, 6.5149, 6.5696, 6.6244, 6.6792, 6.7339, 6.7887, 6.8435, 6.8982, 6.953, 7.0078, 7.0625, 7.1173, 7.1721, 7.2268, 7.2816, 7.3364, 7.3912, 7.4459],
+               [ 'line0', 0.0038, 0.0048, 0.0048, 0.0048, 0.0086, 0.0096, 0.0221, 0.025, 0.0307, 0.023, 0.0374, 0.0278, 0.0298, 0.0441, 0.0374, 0.072, 0.0729, 0.072, 0.0557, 0.0509, 0.0384, 0.0422, 0.0192, 0.0298, 0.023, 0.0202, 0.023, 0.0182, 0.0144, 0.0173, 0.0173, 0.0182, 0.0144, 0.0144, 0.0096, 0.0096, 0.0086, 0.0058, 0.0019, 0.0067],
+           ],
+         },
+         axis: {
+           x: {
+             tick: {
+               format: format_exp_ns,
+               values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+             }
+           },
+           y: {
+             tick: {
+               format: function(value) { return (value * 100).toPrecision(3) + "%"},
+               values: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+             }
+           }
+         },
+         tooltip: {
+           format: {
+             title: function(value) {
+               var quotient = 0.02738445005663649;
+               return format_exp_ns(value - quotient) + " - " + format_exp_ns(value + quotient);
+             }
+           }
+         }
+       });
+     }
+   </script>
+      </div>
+      <div id="gp1" class="glasspanel" style="display: none">
+        <a href="javascript: void(0);" class="popup_close" onclick="parentElement.style.display='none'; chartInPanel = chartInPanel.destroy();">Close X</a>
+  <div id="p1" class="popup_block"></div>
+  <script type="text/javascript">
+    function cp1() {
+      return c3.generate({
+        bindto: "#p1",
+        size: {
+          width: 800,
+          height: 600
+        },
+        padding: {
+          right: 35, top: 20
+        },
+        data: {
+          names: {
+              line0: 'ISPN9 - hotrod (max)',
+              line1: 'ISPN9 - hotrod (avg)',
+          },
+          xs: {
+              line0: 'x0',
+              line1: 'x1',
+          },
+          columns: [
+              [ 'x0',     0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43, 0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53, 0.54, 0.55, 0.56, 0.57, 0.58, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.73, 0.74, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87, 0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1, 1.01, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.1, 1.12, 1.13, 1.14, 1.16, 1.17, 1.18, 1.2, 1.21, 1.23, 1.25, 1.26, 1.27, 1.28, 1.29, 1.31, 1.32, 1.33, 1.34, 1.35, 1.36, 1.37, 1.38, 1.39, 1.4, 1.41, 1.42, 1.47, 1.48, 1.49, 1.51, 1.52, 1.57, 1.58, 1.6, 1.61, 1.63, 1.65, 1.69, 1.71, 1.73, 1.76, 1.78, 1.81, 1.87, 1.9, 1.93, 1.97, 2.01, 2.06, 2.11, 2.17, 2.23, 2.31, 2.41, 2.54, 2.71, 3.01, 3.11],
+              [ 'x1', 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43, 0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53, 0.54, 0.55, 0.56, 0.57, 0.58, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.73, 0.74, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87, 0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1, 1.01, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.1, 1.12, 1.13, 1.14, 1.16, 1.17, 1.18, 1.2, 1.21, 1.23, 1.25, 1.26, 1.27, 1.28, 1.29, 1.31, 1.32, 1.33, 1.34, 1.35, 1.36, 1.37, 1.38, 1.39, 1.4, 1.41, 1.42, 1.47, 1.48, 1.49, 1.51, 1.52, 1.57, 1.58, 1.6, 1.61, 1.63, 1.65, 1.69, 1.71, 1.73, 1.76, 1.78, 1.81, 1.87, 1.9, 1.93, 1.97, 2.01, 2.06, 2.11, 2.17, 2.23, 2.31, 2.41, 2.54, 2.71, 3.01, 3.11],
+              [ 'line0',     5.2304, 5.4786, 5.5785, 5.6294, 5.6768, 5.7127, 5.7585, 5.7885, 5.8165, 5.8554, 5.8888, 5.922, 5.9528, 5.9703, 5.9926, 6.0138, 6.0372, 6.0564, 6.0748, 6.0895, 6.0952, 6.1037, 6.112, 6.1256, 6.1361, 6.1438, 6.1514, 6.1589, 6.1687, 6.1758, 6.1852, 6.1967, 6.2079, 6.2144, 6.2251, 6.2418, 6.2498, 6.2558, 6.2656, 6.2713, 6.2845, 6.29, 6.3043, 6.3113, 6.3216, 6.3317, 6.3415, 6.3543, 6.3636, 6.3788, 6.3876, 6.3963, 6.4048, 6.4103, 6.4185, 6.4345, 6.455, 6.4697, 6.4839, 6.4955, 6.5045, 6.5176, 6.5325, 6.5366, 6.5529, 6.5647, 6.5743, 6.5873, 6.6036, 6.6158, 6.626, 6.6327, 6.649, 6.6553, 6.6647, 6.6677, 6.6798, 6.6973, 6.7141, 6.7329, 6.7356, 6.751, 6.7585, 6.7634, 6.7826, 6.785, 6.7919, 6.8099, 6.8208, 6.8314, 6.8438, 6.8479, 6.8618, 6.8696, 6.8772, 6.8809, 6.8847, 6.8938, 6.9046, 6.9186, 6.922, 6.9371, 6.9403, 6.9436, 6.9532, 6.9626, 6.9688, 6.9748, 6.9838, 6.9926, 7.004, 7.0068, 7.0206, 7.0233, 7.0287, 7.0444, 7.0469, 7.052, 7.057, 7.0645, 7.0669, 7.0789, 7.0906, 7.0975, 7.102, 7.1153, 7.1218, 7.1303, 7.1345, 7.1408, 7.1529, 7.1549, 7.1706, 7.1744, 7.1782, 7.1838, 7.1949, 7.2039, 7.2056, 7.2196, 7.2247, 7.2281, 7.2348, 7.2542, 7.2698, 7.2759, 7.2789, 7.2878, 7.2936, 7.327, 7.3454, 7.3655, 7.3679, 7.3847, 7.3894, 7.3917, 7.4075, 7.4185, 7.4207, 7.4335, 7.4459, 7.4619, 7.5049, 7.5325, 7.5708, 7.5829, 7.6515, 8.0074],
+              [ 'line1', 5.2291, 5.377, 5.4614, 5.5177, 5.5509, 5.585, 5.6111, 5.6362, 5.6606, 5.6809, 5.7048, 5.7219, 5.7427, 5.7603, 5.778, 5.7953, 5.8101, 5.8258, 5.84, 5.8553, 5.8658, 5.8779, 5.8873, 5.8992, 5.9074, 5.9161, 5.9251, 5.9333, 5.9418, 5.9482, 5.9547, 5.9623, 5.9705, 5.9757, 5.982, 5.989, 5.9944, 6.0002, 6.0066, 6.0124, 6.0182, 6.0229, 6.0293, 6.0335, 6.0389, 6.0443, 6.0492, 6.056, 6.0591, 6.0642, 6.0701, 6.076, 6.08, 6.084, 6.0886, 6.0934, 6.0991, 6.1029, 6.1075, 6.1146, 6.1177, 6.1226, 6.1276, 6.1318, 6.137, 6.1414, 6.1477, 6.1513, 6.156, 6.1608, 6.1656, 6.1696, 6.1746, 6.1796, 6.1848, 6.1879, 6.192, 6.1974, 6.2018, 6.2076, 6.2099, 6.2147, 6.2207, 6.2231, 6.2305, 6.2318, 6.2368, 6.2406, 6.2459, 6.25, 6.2527, 6.2569, 6.2611, 6.2654, 6.2711, 6.2739, 6.2768, 6.2811, 6.284, 6.2885, 6.2915, 6.2977, 6.3024, 6.307, 6.31, 6.3132, 6.3163, 6.3195, 6.3228, 6.326, 6.3327, 6.3344, 6.3395, 6.3429, 6.3463, 6.3498, 6.3551, 6.3586, 6.3621, 6.3674, 6.3691, 6.3727, 6.3745, 6.3764, 6.3802, 6.384, 6.3859, 6.3879, 6.3899, 6.3919, 6.3939, 6.396, 6.3981, 6.4003, 6.4024, 6.4046, 6.4134, 6.4156, 6.4178, 6.4201, 6.4224, 6.4293, 6.4316, 6.434, 6.4364, 6.4389, 6.4414, 6.4465, 6.4491, 6.4518, 6.4547, 6.4577, 6.4607, 6.4669, 6.47, 6.4731, 6.4762, 6.4795, 6.4827, 6.486, 6.4894, 6.4929, 6.4968, 6.5008, 6.5053, 6.5098, 6.5151, 6.5275],
+          ],
+        },
+        color: {
+          pattern: series_colors_dup()
+        },
+        axis: {
+          x: {
+            tick: {
+              format: format_percentile,
+              values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            }
+          },
+          y: {
+            tick: {
+              format: format_exp_ns,
+              values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+            }
+          }
+        },
+        point: {
+          show: false
+        },
+        zoom: {
+          enabled: true
+        }
+      });
+    }
+  </script>
+      </div>
+
+      <a href="javascript: void(0);" onClick="javascript: chartInPanel = ch1(); show_panel('gh1', chartInPanel.destroy);">histogram</a> <br>
+      <a href="javascript: void(0);" onClick="javascript: chartInPanel = cp1(); show_panel('gp1', chartInPanel.destroy);">percentiles</a>
+    </td>
+
+
+                  </tr><tr class="h_1 collapsed">
+                    <th>Node 0</th>
+
+
+
+
+    <td class=" firstCellStyle" title="">
+      1,042
+    </td>
+    <td class=" rowStyle errorData" title="">
+      0
+    </td>
+
+      <td class=" rowStyle" title="">
+        3.37&nbsp;ms
+      </td>
+      <td class=" rowStyle" title="">
+        5.73&nbsp;ms
+      </td>
+
+    <td class=" rowStyle" title="">
+    101.71&nbsp;ms
+    </td>
+
+
+
+
+        <td class=" rowStyle" title="">
+          1.54&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          8.36&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          12.65&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          26.21&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          44.83&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          101.71&nbsp;ms
+        </td>
+
+  <!-- TODO: currently the charts for each configuration are generated multiple times;
+             it would be nicer to have them only once, but that would require another loop
+             through all clusters/iterations/nodes/threads. On the other hand the chart
+             is created when opened and destroyed when closed, so it doesn't waste
+             all the resources in runtime. -->
+    <td class=" rowStyle" title="">
+      
+      <div id="gh2" class="glasspanel" style="display: none">
+        <a href="javascript: void(0);" class="popup_close" onclick="parentElement.style.display='none'; chartInPanel = chartInPanel.destroy();">Close X</a>
+  <div id="h2" class="popup_block"></div>
+  <script type="text/javascript">
+     function ch2() {
+       return c3.generate({
+         bindto: "#h2",
+         size: {
+           width: 800,
+           height: 600
+         },
+         padding: {
+           right: 35, top: 20
+         },
+         data: {
+           type: 'step',
+           names: {
+               line0: 'ISPN9 - hotrod',
+           },
+           x: 'x',
+           columns: [
+               [ 'x', 5.2552, 5.3099, 5.3647, 5.4195, 5.4742, 5.529, 5.5838, 5.6386, 5.6933, 5.7481, 5.8029, 5.8576, 5.9124, 5.9672, 6.0219, 6.0767, 6.1315, 6.1862, 6.241, 6.2958, 6.3505, 6.4053, 6.4601, 6.5149, 6.5696, 6.6244, 6.6792, 6.7339, 6.7887, 6.8435, 6.8982, 6.953, 7.0078, 7.0625, 7.1173, 7.1721, 7.2268, 7.2816, 7.3364, 7.3912, 7.4459],
+               [ 'line0', 0.0038, 0.0048, 0.0048, 0.0048, 0.0086, 0.0096, 0.0221, 0.025, 0.0307, 0.023, 0.0374, 0.0278, 0.0298, 0.0441, 0.0374, 0.072, 0.0729, 0.072, 0.0557, 0.0509, 0.0384, 0.0422, 0.0192, 0.0298, 0.023, 0.0202, 0.023, 0.0182, 0.0144, 0.0173, 0.0173, 0.0182, 0.0144, 0.0144, 0.0096, 0.0096, 0.0086, 0.0058, 0.0019, 0.0067],
+           ],
+         },
+         axis: {
+           x: {
+             tick: {
+               format: format_exp_ns,
+               values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+             }
+           },
+           y: {
+             tick: {
+               format: function(value) { return (value * 100).toPrecision(3) + "%"},
+               values: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+             }
+           }
+         },
+         tooltip: {
+           format: {
+             title: function(value) {
+               var quotient = 0.02738445005663649;
+               return format_exp_ns(value - quotient) + " - " + format_exp_ns(value + quotient);
+             }
+           }
+         }
+       });
+     }
+   </script>
+      </div>
+      <div id="gp2" class="glasspanel" style="display: none">
+        <a href="javascript: void(0);" class="popup_close" onclick="parentElement.style.display='none'; chartInPanel = chartInPanel.destroy();">Close X</a>
+  <div id="p2" class="popup_block"></div>
+  <script type="text/javascript">
+    function cp2() {
+      return c3.generate({
+        bindto: "#p2",
+        size: {
+          width: 800,
+          height: 600
+        },
+        padding: {
+          right: 35, top: 20
+        },
+        data: {
+          names: {
+              line0: 'ISPN9 - hotrod (max)',
+              line1: 'ISPN9 - hotrod (avg)',
+          },
+          xs: {
+              line0: 'x0',
+              line1: 'x1',
+          },
+          columns: [
+              [ 'x0',     0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43, 0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53, 0.54, 0.55, 0.56, 0.57, 0.58, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.73, 0.74, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87, 0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1, 1.01, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.1, 1.12, 1.13, 1.14, 1.16, 1.17, 1.18, 1.2, 1.21, 1.23, 1.25, 1.26, 1.27, 1.28, 1.29, 1.31, 1.32, 1.33, 1.34, 1.35, 1.36, 1.37, 1.38, 1.39, 1.4, 1.41, 1.42, 1.47, 1.48, 1.49, 1.51, 1.52, 1.57, 1.58, 1.6, 1.61, 1.63, 1.65, 1.69, 1.71, 1.73, 1.76, 1.78, 1.81, 1.87, 1.9, 1.93, 1.97, 2.01, 2.06, 2.11, 2.17, 2.23, 2.31, 2.41, 2.54, 2.71, 3.01, 3.11],
+              [ 'x1', 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43, 0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53, 0.54, 0.55, 0.56, 0.57, 0.58, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.73, 0.74, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87, 0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1, 1.01, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.1, 1.12, 1.13, 1.14, 1.16, 1.17, 1.18, 1.2, 1.21, 1.23, 1.25, 1.26, 1.27, 1.28, 1.29, 1.31, 1.32, 1.33, 1.34, 1.35, 1.36, 1.37, 1.38, 1.39, 1.4, 1.41, 1.42, 1.47, 1.48, 1.49, 1.51, 1.52, 1.57, 1.58, 1.6, 1.61, 1.63, 1.65, 1.69, 1.71, 1.73, 1.76, 1.78, 1.81, 1.87, 1.9, 1.93, 1.97, 2.01, 2.06, 2.11, 2.17, 2.23, 2.31, 2.41, 2.54, 2.71, 3.01, 3.11],
+              [ 'line0',     5.2304, 5.4786, 5.5785, 5.6294, 5.6768, 5.7127, 5.7585, 5.7885, 5.8165, 5.8554, 5.8888, 5.922, 5.9528, 5.9703, 5.9926, 6.0138, 6.0372, 6.0564, 6.0748, 6.0895, 6.0952, 6.1037, 6.112, 6.1256, 6.1361, 6.1438, 6.1514, 6.1589, 6.1687, 6.1758, 6.1852, 6.1967, 6.2079, 6.2144, 6.2251, 6.2418, 6.2498, 6.2558, 6.2656, 6.2713, 6.2845, 6.29, 6.3043, 6.3113, 6.3216, 6.3317, 6.3415, 6.3543, 6.3636, 6.3788, 6.3876, 6.3963, 6.4048, 6.4103, 6.4185, 6.4345, 6.455, 6.4697, 6.4839, 6.4955, 6.5045, 6.5176, 6.5325, 6.5366, 6.5529, 6.5647, 6.5743, 6.5873, 6.6036, 6.6158, 6.626, 6.6327, 6.649, 6.6553, 6.6647, 6.6677, 6.6798, 6.6973, 6.7141, 6.7329, 6.7356, 6.751, 6.7585, 6.7634, 6.7826, 6.785, 6.7919, 6.8099, 6.8208, 6.8314, 6.8438, 6.8479, 6.8618, 6.8696, 6.8772, 6.8809, 6.8847, 6.8938, 6.9046, 6.9186, 6.922, 6.9371, 6.9403, 6.9436, 6.9532, 6.9626, 6.9688, 6.9748, 6.9838, 6.9926, 7.004, 7.0068, 7.0206, 7.0233, 7.0287, 7.0444, 7.0469, 7.052, 7.057, 7.0645, 7.0669, 7.0789, 7.0906, 7.0975, 7.102, 7.1153, 7.1218, 7.1303, 7.1345, 7.1408, 7.1529, 7.1549, 7.1706, 7.1744, 7.1782, 7.1838, 7.1949, 7.2039, 7.2056, 7.2196, 7.2247, 7.2281, 7.2348, 7.2542, 7.2698, 7.2759, 7.2789, 7.2878, 7.2936, 7.327, 7.3454, 7.3655, 7.3679, 7.3847, 7.3894, 7.3917, 7.4075, 7.4185, 7.4207, 7.4335, 7.4459, 7.4619, 7.5049, 7.5325, 7.5708, 7.5829, 7.6515, 8.0074],
+              [ 'line1', 5.2291, 5.377, 5.4614, 5.5177, 5.5509, 5.585, 5.6111, 5.6362, 5.6606, 5.6809, 5.7048, 5.7219, 5.7427, 5.7603, 5.778, 5.7953, 5.8101, 5.8258, 5.84, 5.8553, 5.8658, 5.8779, 5.8873, 5.8992, 5.9074, 5.9161, 5.9251, 5.9333, 5.9418, 5.9482, 5.9547, 5.9623, 5.9705, 5.9757, 5.982, 5.989, 5.9944, 6.0002, 6.0066, 6.0124, 6.0182, 6.0229, 6.0293, 6.0335, 6.0389, 6.0443, 6.0492, 6.056, 6.0591, 6.0642, 6.0701, 6.076, 6.08, 6.084, 6.0886, 6.0934, 6.0991, 6.1029, 6.1075, 6.1146, 6.1177, 6.1226, 6.1276, 6.1318, 6.137, 6.1414, 6.1477, 6.1513, 6.156, 6.1608, 6.1656, 6.1696, 6.1746, 6.1796, 6.1848, 6.1879, 6.192, 6.1974, 6.2018, 6.2076, 6.2099, 6.2147, 6.2207, 6.2231, 6.2305, 6.2318, 6.2368, 6.2406, 6.2459, 6.25, 6.2527, 6.2569, 6.2611, 6.2654, 6.2711, 6.2739, 6.2768, 6.2811, 6.284, 6.2885, 6.2915, 6.2977, 6.3024, 6.307, 6.31, 6.3132, 6.3163, 6.3195, 6.3228, 6.326, 6.3327, 6.3344, 6.3395, 6.3429, 6.3463, 6.3498, 6.3551, 6.3586, 6.3621, 6.3674, 6.3691, 6.3727, 6.3745, 6.3764, 6.3802, 6.384, 6.3859, 6.3879, 6.3899, 6.3919, 6.3939, 6.396, 6.3981, 6.4003, 6.4024, 6.4046, 6.4134, 6.4156, 6.4178, 6.4201, 6.4224, 6.4293, 6.4316, 6.434, 6.4364, 6.4389, 6.4414, 6.4465, 6.4491, 6.4518, 6.4547, 6.4577, 6.4607, 6.4669, 6.47, 6.4731, 6.4762, 6.4795, 6.4827, 6.486, 6.4894, 6.4929, 6.4968, 6.5008, 6.5053, 6.5098, 6.5151, 6.5275],
+          ],
+        },
+        color: {
+          pattern: series_colors_dup()
+        },
+        axis: {
+          x: {
+            tick: {
+              format: format_percentile,
+              values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            }
+          },
+          y: {
+            tick: {
+              format: format_exp_ns,
+              values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+            }
+          }
+        },
+        point: {
+          show: false
+        },
+        zoom: {
+          enabled: true
+        }
+      });
+    }
+  </script>
+      </div>
+
+      <a href="javascript: void(0);" onClick="javascript: chartInPanel = ch2(); show_panel('gh2', chartInPanel.destroy);">histogram</a> <br>
+      <a href="javascript: void(0);" onClick="javascript: chartInPanel = cp2(); show_panel('gp2', chartInPanel.destroy);">percentiles</a>
+    </td>
+
+ <!-- generate thread stats -->
+                                  </tr><tr class="h_1 collapsed">
+                    <th>Node 1</th>
+
+ <!-- generate thread stats -->
+                                  </tr><tr class="h_1 collapsed">
+                    <th>Node 2</th>
+
+ <!-- generate thread stats -->
+                                  </tr><tr class="h_1 collapsed">
+                    <th>Node 3</th>
+
+ <!-- generate thread stats -->
+                 <!-- node -->
+               <!-- generate node stats -->
+             <!-- iteration -->
+          </tr>
+         <!-- report -->
+      </table>
+     <!-- aggregations -->
+      <h2>Operation: BasicOperations.Get.Null</h2>
+
+  <table class="graphTable">
+      <tr>
+    <th>
+      <br/>
+      Response time mean<br/>
+      <img src="writes-get_BasicOperations.Get.Null_mean_dev_BasicOperations.Get.Null.png"" alt="BasicOperations.Get.Null">
+    </th>
+    <th>
+      <br/>
+      Operation throughput<br/>
+      <img src="writes-get_BasicOperations.Get.Null_throughput_net_BasicOperations.Get.Null.png"" alt="BasicOperations.Get.Null">
+    </th>
+      </tr>
+      <tr>
+    <th>
+      <br/>
+      Response time over time<br/>
+      <img src="writes-get_BasicOperations.Get.Null_mean_dev_series_BasicOperations.Get.Null.png"" alt="BasicOperations.Get.Null">
+    </th>
+    <th>
+      <br/>
+      Requests progression<br/>
+      <img src="writes-get_BasicOperations.Get.Null_requests_series_BasicOperations.Get.Null.png"" alt="BasicOperations.Get.Null">
+    </th>
+      </tr>
+      <tr>
+    <th>
+      <br/>
+      Operation throughput over time<br/>
+      <img src="writes-get_BasicOperations.Get.Null_throughput_net_series_BasicOperations.Get.Null.png"" alt="BasicOperations.Get.Null">
+    </th>
+  </table>
+    <br>
+
+      <table>
+
+        <col/>
+        <col/>
+        <col/>
+        <col/>
+
+        <col/>
+        <col/>
+        <col/>
+        <col/>
+
+
+
+            <col id="RTM at 50 %">
+            <col id="RTM at 90 %">
+            <col id="RTM at 95 %">
+            <col id="RTM at 99 %">
+            <col id="RTM at 99.9 %">
+            <col id="RTM at 99.99 %">
+
+          <col id="histograms">
+
+        <tr>
+          <th colspan="4"> Configuration writes-get</th>
+          <th>requests</th>
+          <th>errors</th>
+          <th>latency mean</th>
+          <th>latency std.dev</th>
+          <th>latency max</th>
+
+
+              <th>RTM at 50 %</th>
+              <th>RTM at 90 %</th>
+              <th>RTM at 95 %</th>
+              <th>RTM at 99 %</th>
+              <th>RTM at 99.9 %</th>
+              <th>RTM at 99.99 %</th>
+
+            <th>histograms</th>
+        </tr>
+
+
+
+
+
+
+          <tr>
+            <th rowspan= 5 onClick="switch_class_by_class('h_2','expanded','collapsed')" class="onClick">
+              <img class="h_2 expanded" src="ic_arrow_drop_down_black_24dp.png">
+              <img class="h_2 collapsed" src="ic_arrow_drop_up_black_24dp.png">
+            </th>
+            <th rowspan= 5 >ISPN9 - hotrod</th>
+            <th rowspan= 5 >Cluster[client=1, echo=3]</th>
+
+
+
+
+              <th>Iteration 0</th>
+
+
+
+
+
+    <td class=" firstCellStyle" title="">
+      3,969
+    </td>
+    <td class=" rowStyle errorData" title="">
+      0
+    </td>
+
+      <td class=" rowStyle" title="">
+        3.68&nbsp;ms
+      </td>
+      <td class=" rowStyle" title="">
+        6.28&nbsp;ms
+      </td>
+
+    <td class=" rowStyle" title="">
+    87.56&nbsp;ms
+    </td>
+
+
+
+
+        <td class=" rowStyle" title="">
+          1.37&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          10.29&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          15.86&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          30.02&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          63.7&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          87.56&nbsp;ms
+        </td>
+
+  <!-- TODO: currently the charts for each configuration are generated multiple times;
+             it would be nicer to have them only once, but that would require another loop
+             through all clusters/iterations/nodes/threads. On the other hand the chart
+             is created when opened and destroyed when closed, so it doesn't waste
+             all the resources in runtime. -->
+    <td class=" rowStyle" title="">
+      
+      <div id="gh3" class="glasspanel" style="display: none">
+        <a href="javascript: void(0);" class="popup_close" onclick="parentElement.style.display='none'; chartInPanel = chartInPanel.destroy();">Close X</a>
+  <div id="h3" class="popup_block"></div>
+  <script type="text/javascript">
+     function ch3() {
+       return c3.generate({
+         bindto: "#h3",
+         size: {
+           width: 800,
+           height: 600
+         },
+         padding: {
+           right: 35, top: 20
+         },
+         data: {
+           type: 'step',
+           names: {
+               line0: 'ISPN9 - hotrod',
+           },
+           x: 'x',
+           columns: [
+               [ 'x', 5.0147, 5.0772, 5.1397, 5.2021, 5.2646, 5.3271, 5.3896, 5.4521, 5.5146, 5.5771, 5.6396, 5.7021, 5.7645, 5.827, 5.8895, 5.952, 6.0145, 6.077, 6.1395, 6.202, 6.2645, 6.3269, 6.3894, 6.4519, 6.5144, 6.5769, 6.6394, 6.7019, 6.7644, 6.8269, 6.8894, 6.9518, 7.0143, 7.0768, 7.1393, 7.2018, 7.2643, 7.3268, 7.3893, 7.4518, 7.5142],
+               [ 'line0', 0.0015, 0.001, 0.0025, 0.0035, 0.005, 0.0073, 0.0093, 0.0126, 0.0189, 0.0219, 0.0305, 0.0285, 0.0338, 0.0385, 0.0481, 0.065, 0.0695, 0.07, 0.0648, 0.0617, 0.0459, 0.0328, 0.0312, 0.0292, 0.027, 0.0222, 0.0171, 0.0204, 0.0199, 0.0176, 0.0179, 0.0144, 0.0209, 0.0184, 0.0139, 0.0139, 0.0126, 0.0083, 0.0083, 0.004],
+           ],
+         },
+         axis: {
+           x: {
+             tick: {
+               format: format_exp_ns,
+               values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+             }
+           },
+           y: {
+             tick: {
+               format: function(value) { return (value * 100).toPrecision(3) + "%"},
+               values: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+             }
+           }
+         },
+         tooltip: {
+           format: {
+             title: function(value) {
+               var quotient = 0.03124462608321445;
+               return format_exp_ns(value - quotient) + " - " + format_exp_ns(value + quotient);
+             }
+           }
+         }
+       });
+     }
+   </script>
+      </div>
+      <div id="gp3" class="glasspanel" style="display: none">
+        <a href="javascript: void(0);" class="popup_close" onclick="parentElement.style.display='none'; chartInPanel = chartInPanel.destroy();">Close X</a>
+  <div id="p3" class="popup_block"></div>
+  <script type="text/javascript">
+    function cp3() {
+      return c3.generate({
+        bindto: "#p3",
+        size: {
+          width: 800,
+          height: 600
+        },
+        padding: {
+          right: 35, top: 20
+        },
+        data: {
+          names: {
+              line0: 'ISPN9 - hotrod (max)',
+              line1: 'ISPN9 - hotrod (avg)',
+          },
+          xs: {
+              line0: 'x0',
+              line1: 'x1',
+          },
+          columns: [
+              [ 'x0',     0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43, 0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53, 0.54, 0.55, 0.56, 0.57, 0.58, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.73, 0.74, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87, 0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1, 1.01, 1.02, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.1, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18, 1.19, 1.2, 1.22, 1.23, 1.24, 1.25, 1.26, 1.27, 1.28, 1.29, 1.31, 1.32, 1.33, 1.34, 1.35, 1.36, 1.37, 1.38, 1.39, 1.4, 1.42, 1.43, 1.44, 1.45, 1.46, 1.47, 1.49, 1.5, 1.51, 1.52, 1.53, 1.54, 1.55, 1.56, 1.57, 1.58, 1.59, 1.6, 1.61, 1.63, 1.64, 1.65, 1.66, 1.67, 1.69, 1.7, 1.71, 1.72, 1.73, 1.74, 1.75, 1.77, 1.78, 1.79, 1.8, 1.81, 1.82, 1.84, 1.85, 1.86, 1.89, 1.9, 1.91, 1.92, 1.95, 1.96, 1.97, 1.98, 1.99, 2.01, 2.04, 2.05, 2.06, 2.08, 2.1, 2.12, 2.13, 2.15, 2.16, 2.2, 2.21, 2.23, 2.25, 2.27, 2.29, 2.31, 2.36, 2.39, 2.42, 2.45, 2.48, 2.51, 2.55, 2.59, 2.69, 2.75, 2.82, 2.89, 2.99, 3.12, 3.29, 3.59, 3.69],
+              [ 'x1', 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43, 0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53, 0.54, 0.55, 0.56, 0.57, 0.58, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.73, 0.74, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87, 0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1, 1.01, 1.02, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.1, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18, 1.19, 1.2, 1.22, 1.23, 1.24, 1.25, 1.26, 1.27, 1.28, 1.29, 1.31, 1.32, 1.33, 1.34, 1.35, 1.36, 1.37, 1.38, 1.39, 1.4, 1.42, 1.43, 1.44, 1.45, 1.46, 1.47, 1.49, 1.5, 1.51, 1.52, 1.53, 1.54, 1.55, 1.56, 1.57, 1.58, 1.59, 1.6, 1.61, 1.63, 1.64, 1.65, 1.66, 1.67, 1.69, 1.7, 1.71, 1.72, 1.73, 1.74, 1.75, 1.77, 1.78, 1.79, 1.8, 1.81, 1.82, 1.84, 1.85, 1.86, 1.89, 1.9, 1.91, 1.92, 1.95, 1.96, 1.97, 1.98, 1.99, 2.01, 2.04, 2.05, 2.06, 2.08, 2.1, 2.12, 2.13, 2.15, 2.16, 2.2, 2.21, 2.23, 2.25, 2.27, 2.29, 2.31, 2.36, 2.39, 2.42, 2.45, 2.48, 2.51, 2.55, 2.59, 2.69, 2.75, 2.82, 2.89, 2.99, 3.12, 3.29, 3.59, 3.69],
+              [ 'line0',     4.9857, 5.3682, 5.4874, 5.5617, 5.6167, 5.6596, 5.7023, 5.7459, 5.7797, 5.811, 5.8479, 5.8724, 5.8934, 5.9156, 5.9346, 5.9508, 5.9626, 5.9778, 5.9908, 6.0051, 6.0189, 6.034, 6.0437, 6.0533, 6.0687, 6.0777, 6.0924, 6.1037, 6.1175, 6.1256, 6.1361, 6.1464, 6.1589, 6.1687, 6.1782, 6.1899, 6.1989, 6.2101, 6.2209, 6.2315, 6.2397, 6.2478, 6.2617, 6.277, 6.29, 6.3043, 6.3216, 6.335, 6.3543, 6.3636, 6.3758, 6.3934, 6.4103, 6.4212, 6.4371, 6.4499, 6.4648, 6.4745, 6.4909, 6.5045, 6.5176, 6.5283, 6.5448, 6.5608, 6.578, 6.5928, 6.6054, 6.6158, 6.6327, 6.649, 6.6738, 6.6886, 6.6973, 6.7113, 6.7223, 6.7408, 6.7585, 6.7707, 6.7803, 6.7896, 6.8099, 6.8186, 6.8356, 6.8418, 6.8539, 6.8638, 6.8715, 6.8828, 6.8975, 6.9064, 6.9169, 6.9271, 6.9403, 6.95, 6.9657, 6.9778, 6.9838, 6.9926, 6.9983, 7.0068, 7.0124, 7.0179, 7.0233, 7.0313, 7.0392, 7.0469, 7.0545, 7.0595, 7.0693, 7.0742, 7.0789, 7.086, 7.0883, 7.0929, 7.102, 7.1087, 7.1153, 7.1261, 7.1325, 7.1366, 7.1408, 7.1469, 7.1549, 7.1648, 7.1725, 7.1782, 7.182, 7.1875, 7.1949, 7.2003, 7.2109, 7.2162, 7.2213, 7.2247, 7.2281, 7.2348, 7.2414, 7.2478, 7.251, 7.2542, 7.2605, 7.2636, 7.2698, 7.2789, 7.2819, 7.2848, 7.2878, 7.2936, 7.2965, 7.2994, 7.305, 7.3134, 7.3162, 7.3189, 7.3297, 7.3324, 7.335, 7.3428, 7.3454, 7.348, 7.3581, 7.363, 7.3655, 7.3679, 7.3728, 7.3776, 7.38, 7.3823, 7.3847, 7.3917, 7.3985, 7.4008, 7.4031, 7.4075, 7.4098, 7.4142, 7.4164, 7.4185, 7.4207, 7.4314, 7.452, 7.456, 7.458, 7.4599, 7.4619, 7.4678, 7.4735, 7.4773, 7.483, 7.4849, 7.4959, 7.4977, 7.5084, 7.5137, 7.5172, 7.5223, 7.5241, 7.5257, 7.5291, 7.5325, 7.5391, 7.5424, 7.5521, 7.5647, 7.5678, 7.5739, 7.5888, 7.6117, 7.6144, 7.6227, 7.6254, 7.6334, 7.6515, 7.669, 7.6881, 7.6927, 7.7765, 7.8041, 7.8434, 7.8594, 7.8657, 7.9423],
+              [ 'line1', 4.9846, 5.2598, 5.3562, 5.4193, 5.4668, 5.5062, 5.5387, 5.5686, 5.5954, 5.6208, 5.6461, 5.6662, 5.6862, 5.7045, 5.7218, 5.7383, 5.7523, 5.7661, 5.7791, 5.7909, 5.8018, 5.8146, 5.8226, 5.8323, 5.8435, 5.8511, 5.8601, 5.8684, 5.8777, 5.8846, 5.8933, 5.8994, 5.9072, 5.9135, 5.921, 5.9272, 5.9339, 5.9404, 5.9468, 5.9536, 5.9589, 5.9646, 5.9708, 5.9764, 5.9824, 5.9885, 5.995, 6.0003, 6.0074, 6.012, 6.0179, 6.0245, 6.032, 6.0367, 6.0425, 6.0478, 6.0544, 6.0596, 6.0662, 6.0721, 6.0775, 6.0832, 6.089, 6.0949, 6.1008, 6.1071, 6.113, 6.1192, 6.1256, 6.1312, 6.138, 6.1438, 6.1485, 6.1541, 6.1601, 6.1666, 6.1729, 6.1787, 6.184, 6.1903, 6.1962, 6.2015, 6.2085, 6.2135, 6.2186, 6.2245, 6.2301, 6.2349, 6.2411, 6.2464, 6.2523, 6.256, 6.262, 6.2663, 6.2715, 6.2774, 6.2824, 6.2873, 6.2913, 6.2959, 6.3014, 6.3059, 6.3105, 6.314, 6.3186, 6.3227, 6.3279, 6.331, 6.3347, 6.3405, 6.3431, 6.3479, 6.3521, 6.3542, 6.3579, 6.3622, 6.365, 6.3677, 6.3716, 6.3744, 6.3783, 6.3839, 6.3873, 6.3902, 6.3936, 6.396, 6.4001, 6.4018, 6.4054, 6.4102, 6.4144, 6.4156, 6.4186, 6.4211, 6.4229, 6.4254, 6.4292, 6.4311, 6.4342, 6.4374, 6.4406, 6.4419, 6.4438, 6.4471, 6.449, 6.453, 6.4536, 6.4556, 6.4576, 6.4589, 6.4609, 6.4637, 6.465, 6.4664, 6.4685, 6.4699, 6.4713, 6.4735, 6.4771, 6.4785, 6.4792, 6.4814, 6.4822, 6.4844, 6.4866, 6.4874, 6.4889, 6.4904, 6.4912, 6.4927, 6.4958, 6.4966, 6.4982, 6.499, 6.4998, 6.5006, 6.503, 6.5038, 6.5054, 6.5078, 6.5095, 6.5104, 6.5112, 6.5138, 6.5147, 6.5156, 6.5165, 6.5174, 6.5192, 6.521, 6.5219, 6.5229, 6.5238, 6.5257, 6.5267, 6.5277, 6.5287, 6.5296, 6.5316, 6.5326, 6.5336, 6.5346, 6.5356, 6.5367, 6.5378, 6.5399, 6.541, 6.5422, 6.5434, 6.5446, 6.5458, 6.547, 6.5483, 6.551, 6.5524, 6.5538, 6.5555, 6.5573, 6.5593, 6.5613, 6.5634, 6.5659],
+          ],
+        },
+        color: {
+          pattern: series_colors_dup()
+        },
+        axis: {
+          x: {
+            tick: {
+              format: format_percentile,
+              values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            }
+          },
+          y: {
+            tick: {
+              format: format_exp_ns,
+              values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+            }
+          }
+        },
+        point: {
+          show: false
+        },
+        zoom: {
+          enabled: true
+        }
+      });
+    }
+  </script>
+      </div>
+
+      <a href="javascript: void(0);" onClick="javascript: chartInPanel = ch3(); show_panel('gh3', chartInPanel.destroy);">histogram</a> <br>
+      <a href="javascript: void(0);" onClick="javascript: chartInPanel = cp3(); show_panel('gp3', chartInPanel.destroy);">percentiles</a>
+    </td>
+
+
+                  </tr><tr class="h_2 collapsed">
+                    <th>Node 0</th>
+
+
+
+
+    <td class=" firstCellStyle" title="">
+      3,969
+    </td>
+    <td class=" rowStyle errorData" title="">
+      0
+    </td>
+
+      <td class=" rowStyle" title="">
+        3.68&nbsp;ms
+      </td>
+      <td class=" rowStyle" title="">
+        6.28&nbsp;ms
+      </td>
+
+    <td class=" rowStyle" title="">
+    87.56&nbsp;ms
+    </td>
+
+
+
+
+        <td class=" rowStyle" title="">
+          1.37&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          10.29&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          15.86&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          30.02&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          63.7&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          87.56&nbsp;ms
+        </td>
+
+  <!-- TODO: currently the charts for each configuration are generated multiple times;
+             it would be nicer to have them only once, but that would require another loop
+             through all clusters/iterations/nodes/threads. On the other hand the chart
+             is created when opened and destroyed when closed, so it doesn't waste
+             all the resources in runtime. -->
+    <td class=" rowStyle" title="">
+      
+      <div id="gh4" class="glasspanel" style="display: none">
+        <a href="javascript: void(0);" class="popup_close" onclick="parentElement.style.display='none'; chartInPanel = chartInPanel.destroy();">Close X</a>
+  <div id="h4" class="popup_block"></div>
+  <script type="text/javascript">
+     function ch4() {
+       return c3.generate({
+         bindto: "#h4",
+         size: {
+           width: 800,
+           height: 600
+         },
+         padding: {
+           right: 35, top: 20
+         },
+         data: {
+           type: 'step',
+           names: {
+               line0: 'ISPN9 - hotrod',
+           },
+           x: 'x',
+           columns: [
+               [ 'x', 5.0147, 5.0772, 5.1397, 5.2021, 5.2646, 5.3271, 5.3896, 5.4521, 5.5146, 5.5771, 5.6396, 5.7021, 5.7645, 5.827, 5.8895, 5.952, 6.0145, 6.077, 6.1395, 6.202, 6.2645, 6.3269, 6.3894, 6.4519, 6.5144, 6.5769, 6.6394, 6.7019, 6.7644, 6.8269, 6.8894, 6.9518, 7.0143, 7.0768, 7.1393, 7.2018, 7.2643, 7.3268, 7.3893, 7.4518, 7.5142],
+               [ 'line0', 0.0015, 0.001, 0.0025, 0.0035, 0.005, 0.0073, 0.0093, 0.0126, 0.0189, 0.0219, 0.0305, 0.0285, 0.0338, 0.0385, 0.0481, 0.065, 0.0695, 0.07, 0.0648, 0.0617, 0.0459, 0.0328, 0.0312, 0.0292, 0.027, 0.0222, 0.0171, 0.0204, 0.0199, 0.0176, 0.0179, 0.0144, 0.0209, 0.0184, 0.0139, 0.0139, 0.0126, 0.0083, 0.0083, 0.004],
+           ],
+         },
+         axis: {
+           x: {
+             tick: {
+               format: format_exp_ns,
+               values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+             }
+           },
+           y: {
+             tick: {
+               format: function(value) { return (value * 100).toPrecision(3) + "%"},
+               values: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+             }
+           }
+         },
+         tooltip: {
+           format: {
+             title: function(value) {
+               var quotient = 0.03124462608321445;
+               return format_exp_ns(value - quotient) + " - " + format_exp_ns(value + quotient);
+             }
+           }
+         }
+       });
+     }
+   </script>
+      </div>
+      <div id="gp4" class="glasspanel" style="display: none">
+        <a href="javascript: void(0);" class="popup_close" onclick="parentElement.style.display='none'; chartInPanel = chartInPanel.destroy();">Close X</a>
+  <div id="p4" class="popup_block"></div>
+  <script type="text/javascript">
+    function cp4() {
+      return c3.generate({
+        bindto: "#p4",
+        size: {
+          width: 800,
+          height: 600
+        },
+        padding: {
+          right: 35, top: 20
+        },
+        data: {
+          names: {
+              line0: 'ISPN9 - hotrod (max)',
+              line1: 'ISPN9 - hotrod (avg)',
+          },
+          xs: {
+              line0: 'x0',
+              line1: 'x1',
+          },
+          columns: [
+              [ 'x0',     0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43, 0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53, 0.54, 0.55, 0.56, 0.57, 0.58, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.73, 0.74, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87, 0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1, 1.01, 1.02, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.1, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18, 1.19, 1.2, 1.22, 1.23, 1.24, 1.25, 1.26, 1.27, 1.28, 1.29, 1.31, 1.32, 1.33, 1.34, 1.35, 1.36, 1.37, 1.38, 1.39, 1.4, 1.42, 1.43, 1.44, 1.45, 1.46, 1.47, 1.49, 1.5, 1.51, 1.52, 1.53, 1.54, 1.55, 1.56, 1.57, 1.58, 1.59, 1.6, 1.61, 1.63, 1.64, 1.65, 1.66, 1.67, 1.69, 1.7, 1.71, 1.72, 1.73, 1.74, 1.75, 1.77, 1.78, 1.79, 1.8, 1.81, 1.82, 1.84, 1.85, 1.86, 1.89, 1.9, 1.91, 1.92, 1.95, 1.96, 1.97, 1.98, 1.99, 2.01, 2.04, 2.05, 2.06, 2.08, 2.1, 2.12, 2.13, 2.15, 2.16, 2.2, 2.21, 2.23, 2.25, 2.27, 2.29, 2.31, 2.36, 2.39, 2.42, 2.45, 2.48, 2.51, 2.55, 2.59, 2.69, 2.75, 2.82, 2.89, 2.99, 3.12, 3.29, 3.59, 3.69],
+              [ 'x1', 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43, 0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53, 0.54, 0.55, 0.56, 0.57, 0.58, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.73, 0.74, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87, 0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1, 1.01, 1.02, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.1, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18, 1.19, 1.2, 1.22, 1.23, 1.24, 1.25, 1.26, 1.27, 1.28, 1.29, 1.31, 1.32, 1.33, 1.34, 1.35, 1.36, 1.37, 1.38, 1.39, 1.4, 1.42, 1.43, 1.44, 1.45, 1.46, 1.47, 1.49, 1.5, 1.51, 1.52, 1.53, 1.54, 1.55, 1.56, 1.57, 1.58, 1.59, 1.6, 1.61, 1.63, 1.64, 1.65, 1.66, 1.67, 1.69, 1.7, 1.71, 1.72, 1.73, 1.74, 1.75, 1.77, 1.78, 1.79, 1.8, 1.81, 1.82, 1.84, 1.85, 1.86, 1.89, 1.9, 1.91, 1.92, 1.95, 1.96, 1.97, 1.98, 1.99, 2.01, 2.04, 2.05, 2.06, 2.08, 2.1, 2.12, 2.13, 2.15, 2.16, 2.2, 2.21, 2.23, 2.25, 2.27, 2.29, 2.31, 2.36, 2.39, 2.42, 2.45, 2.48, 2.51, 2.55, 2.59, 2.69, 2.75, 2.82, 2.89, 2.99, 3.12, 3.29, 3.59, 3.69],
+              [ 'line0',     4.9857, 5.3682, 5.4874, 5.5617, 5.6167, 5.6596, 5.7023, 5.7459, 5.7797, 5.811, 5.8479, 5.8724, 5.8934, 5.9156, 5.9346, 5.9508, 5.9626, 5.9778, 5.9908, 6.0051, 6.0189, 6.034, 6.0437, 6.0533, 6.0687, 6.0777, 6.0924, 6.1037, 6.1175, 6.1256, 6.1361, 6.1464, 6.1589, 6.1687, 6.1782, 6.1899, 6.1989, 6.2101, 6.2209, 6.2315, 6.2397, 6.2478, 6.2617, 6.277, 6.29, 6.3043, 6.3216, 6.335, 6.3543, 6.3636, 6.3758, 6.3934, 6.4103, 6.4212, 6.4371, 6.4499, 6.4648, 6.4745, 6.4909, 6.5045, 6.5176, 6.5283, 6.5448, 6.5608, 6.578, 6.5928, 6.6054, 6.6158, 6.6327, 6.649, 6.6738, 6.6886, 6.6973, 6.7113, 6.7223, 6.7408, 6.7585, 6.7707, 6.7803, 6.7896, 6.8099, 6.8186, 6.8356, 6.8418, 6.8539, 6.8638, 6.8715, 6.8828, 6.8975, 6.9064, 6.9169, 6.9271, 6.9403, 6.95, 6.9657, 6.9778, 6.9838, 6.9926, 6.9983, 7.0068, 7.0124, 7.0179, 7.0233, 7.0313, 7.0392, 7.0469, 7.0545, 7.0595, 7.0693, 7.0742, 7.0789, 7.086, 7.0883, 7.0929, 7.102, 7.1087, 7.1153, 7.1261, 7.1325, 7.1366, 7.1408, 7.1469, 7.1549, 7.1648, 7.1725, 7.1782, 7.182, 7.1875, 7.1949, 7.2003, 7.2109, 7.2162, 7.2213, 7.2247, 7.2281, 7.2348, 7.2414, 7.2478, 7.251, 7.2542, 7.2605, 7.2636, 7.2698, 7.2789, 7.2819, 7.2848, 7.2878, 7.2936, 7.2965, 7.2994, 7.305, 7.3134, 7.3162, 7.3189, 7.3297, 7.3324, 7.335, 7.3428, 7.3454, 7.348, 7.3581, 7.363, 7.3655, 7.3679, 7.3728, 7.3776, 7.38, 7.3823, 7.3847, 7.3917, 7.3985, 7.4008, 7.4031, 7.4075, 7.4098, 7.4142, 7.4164, 7.4185, 7.4207, 7.4314, 7.452, 7.456, 7.458, 7.4599, 7.4619, 7.4678, 7.4735, 7.4773, 7.483, 7.4849, 7.4959, 7.4977, 7.5084, 7.5137, 7.5172, 7.5223, 7.5241, 7.5257, 7.5291, 7.5325, 7.5391, 7.5424, 7.5521, 7.5647, 7.5678, 7.5739, 7.5888, 7.6117, 7.6144, 7.6227, 7.6254, 7.6334, 7.6515, 7.669, 7.6881, 7.6927, 7.7765, 7.8041, 7.8434, 7.8594, 7.8657, 7.9423],
+              [ 'line1', 4.9846, 5.2598, 5.3562, 5.4193, 5.4668, 5.5062, 5.5387, 5.5686, 5.5954, 5.6208, 5.6461, 5.6662, 5.6862, 5.7045, 5.7218, 5.7383, 5.7523, 5.7661, 5.7791, 5.7909, 5.8018, 5.8146, 5.8226, 5.8323, 5.8435, 5.8511, 5.8601, 5.8684, 5.8777, 5.8846, 5.8933, 5.8994, 5.9072, 5.9135, 5.921, 5.9272, 5.9339, 5.9404, 5.9468, 5.9536, 5.9589, 5.9646, 5.9708, 5.9764, 5.9824, 5.9885, 5.995, 6.0003, 6.0074, 6.012, 6.0179, 6.0245, 6.032, 6.0367, 6.0425, 6.0478, 6.0544, 6.0596, 6.0662, 6.0721, 6.0775, 6.0832, 6.089, 6.0949, 6.1008, 6.1071, 6.113, 6.1192, 6.1256, 6.1312, 6.138, 6.1438, 6.1485, 6.1541, 6.1601, 6.1666, 6.1729, 6.1787, 6.184, 6.1903, 6.1962, 6.2015, 6.2085, 6.2135, 6.2186, 6.2245, 6.2301, 6.2349, 6.2411, 6.2464, 6.2523, 6.256, 6.262, 6.2663, 6.2715, 6.2774, 6.2824, 6.2873, 6.2913, 6.2959, 6.3014, 6.3059, 6.3105, 6.314, 6.3186, 6.3227, 6.3279, 6.331, 6.3347, 6.3405, 6.3431, 6.3479, 6.3521, 6.3542, 6.3579, 6.3622, 6.365, 6.3677, 6.3716, 6.3744, 6.3783, 6.3839, 6.3873, 6.3902, 6.3936, 6.396, 6.4001, 6.4018, 6.4054, 6.4102, 6.4144, 6.4156, 6.4186, 6.4211, 6.4229, 6.4254, 6.4292, 6.4311, 6.4342, 6.4374, 6.4406, 6.4419, 6.4438, 6.4471, 6.449, 6.453, 6.4536, 6.4556, 6.4576, 6.4589, 6.4609, 6.4637, 6.465, 6.4664, 6.4685, 6.4699, 6.4713, 6.4735, 6.4771, 6.4785, 6.4792, 6.4814, 6.4822, 6.4844, 6.4866, 6.4874, 6.4889, 6.4904, 6.4912, 6.4927, 6.4958, 6.4966, 6.4982, 6.499, 6.4998, 6.5006, 6.503, 6.5038, 6.5054, 6.5078, 6.5095, 6.5104, 6.5112, 6.5138, 6.5147, 6.5156, 6.5165, 6.5174, 6.5192, 6.521, 6.5219, 6.5229, 6.5238, 6.5257, 6.5267, 6.5277, 6.5287, 6.5296, 6.5316, 6.5326, 6.5336, 6.5346, 6.5356, 6.5367, 6.5378, 6.5399, 6.541, 6.5422, 6.5434, 6.5446, 6.5458, 6.547, 6.5483, 6.551, 6.5524, 6.5538, 6.5555, 6.5573, 6.5593, 6.5613, 6.5634, 6.5659],
+          ],
+        },
+        color: {
+          pattern: series_colors_dup()
+        },
+        axis: {
+          x: {
+            tick: {
+              format: format_percentile,
+              values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            }
+          },
+          y: {
+            tick: {
+              format: format_exp_ns,
+              values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+            }
+          }
+        },
+        point: {
+          show: false
+        },
+        zoom: {
+          enabled: true
+        }
+      });
+    }
+  </script>
+      </div>
+
+      <a href="javascript: void(0);" onClick="javascript: chartInPanel = ch4(); show_panel('gh4', chartInPanel.destroy);">histogram</a> <br>
+      <a href="javascript: void(0);" onClick="javascript: chartInPanel = cp4(); show_panel('gp4', chartInPanel.destroy);">percentiles</a>
+    </td>
+
+ <!-- generate thread stats -->
+                                  </tr><tr class="h_2 collapsed">
+                    <th>Node 1</th>
+
+ <!-- generate thread stats -->
+                                  </tr><tr class="h_2 collapsed">
+                    <th>Node 2</th>
+
+ <!-- generate thread stats -->
+                                  </tr><tr class="h_2 collapsed">
+                    <th>Node 3</th>
+
+ <!-- generate thread stats -->
+                 <!-- node -->
+               <!-- generate node stats -->
+             <!-- iteration -->
+          </tr>
+         <!-- report -->
+      </table>
+     <!-- aggregations -->
+      <h2>Operation: BasicOperations.Put</h2>
+
+  <table class="graphTable">
+      <tr>
+    <th>
+      <br/>
+      Response time mean<br/>
+      <img src="writes-get_BasicOperations.Put_mean_dev_BasicOperations.Put.png"" alt="BasicOperations.Put">
+    </th>
+    <th>
+      <br/>
+      Operation throughput<br/>
+      <img src="writes-get_BasicOperations.Put_throughput_net_BasicOperations.Put.png"" alt="BasicOperations.Put">
+    </th>
+      </tr>
+      <tr>
+    <th>
+      <br/>
+      Response time over time<br/>
+      <img src="writes-get_BasicOperations.Put_mean_dev_series_BasicOperations.Put.png"" alt="BasicOperations.Put">
+    </th>
+    <th>
+      <br/>
+      Requests progression<br/>
+      <img src="writes-get_BasicOperations.Put_requests_series_BasicOperations.Put.png"" alt="BasicOperations.Put">
+    </th>
+      </tr>
+      <tr>
+    <th>
+      <br/>
+      Operation throughput over time<br/>
+      <img src="writes-get_BasicOperations.Put_throughput_net_series_BasicOperations.Put.png"" alt="BasicOperations.Put">
+    </th>
+  </table>
+    <br>
+
+      <table>
+
+        <col/>
+        <col/>
+        <col/>
+        <col/>
+
+        <col/>
+        <col/>
+        <col/>
+        <col/>
+
+
+
+            <col id="RTM at 50 %">
+            <col id="RTM at 90 %">
+            <col id="RTM at 95 %">
+            <col id="RTM at 99 %">
+            <col id="RTM at 99.9 %">
+            <col id="RTM at 99.99 %">
+
+          <col id="histograms">
+
+        <tr>
+          <th colspan="4"> Configuration writes-get</th>
+          <th>requests</th>
+          <th>errors</th>
+          <th>latency mean</th>
+          <th>latency std.dev</th>
+          <th>latency max</th>
+
+
+              <th>RTM at 50 %</th>
+              <th>RTM at 90 %</th>
+              <th>RTM at 95 %</th>
+              <th>RTM at 99 %</th>
+              <th>RTM at 99.9 %</th>
+              <th>RTM at 99.99 %</th>
+
+            <th>histograms</th>
+        </tr>
+
+
+
+
+
+
+          <tr>
+            <th rowspan= 5 onClick="switch_class_by_class('h_3','expanded','collapsed')" class="onClick">
+              <img class="h_3 expanded" src="ic_arrow_drop_down_black_24dp.png">
+              <img class="h_3 collapsed" src="ic_arrow_drop_up_black_24dp.png">
+            </th>
+            <th rowspan= 5 >ISPN9 - hotrod</th>
+            <th rowspan= 5 >Cluster[client=1, echo=3]</th>
+
+
+
+
+              <th>Iteration 0</th>
+
+
+
+
+
+    <td class=" firstCellStyle" title="">
+      4,989
+    </td>
+    <td class=" rowStyle errorData" title="">
+      0
+    </td>
+
+      <td class=" rowStyle" title="">
+        4.35&nbsp;ms
+      </td>
+      <td class=" rowStyle" title="">
+        6.58&nbsp;ms
+      </td>
+
+    <td class=" rowStyle" title="">
+    80.74&nbsp;ms
+    </td>
+
+
+
+
+        <td class=" rowStyle" title="">
+          1.97&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          11.01&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          16.45&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          33.42&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          56.89&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          80.74&nbsp;ms
+        </td>
+
+  <!-- TODO: currently the charts for each configuration are generated multiple times;
+             it would be nicer to have them only once, but that would require another loop
+             through all clusters/iterations/nodes/threads. On the other hand the chart
+             is created when opened and destroyed when closed, so it doesn't waste
+             all the resources in runtime. -->
+    <td class=" rowStyle" title="">
+      
+      <div id="gh5" class="glasspanel" style="display: none">
+        <a href="javascript: void(0);" class="popup_close" onclick="parentElement.style.display='none'; chartInPanel = chartInPanel.destroy();">Close X</a>
+  <div id="h5" class="popup_block"></div>
+  <script type="text/javascript">
+     function ch5() {
+       return c3.generate({
+         bindto: "#h5",
+         size: {
+           width: 800,
+           height: 600
+         },
+         padding: {
+           right: 35, top: 20
+         },
+         data: {
+           type: 'step',
+           names: {
+               line0: 'ISPN9 - hotrod',
+           },
+           x: 'x',
+           columns: [
+               [ 'x', 5.151, 5.2112, 5.2714, 5.3316, 5.3918, 5.452, 5.5122, 5.5724, 5.6326, 5.6928, 5.7531, 5.8133, 5.8735, 5.9337, 5.9939, 6.0541, 6.1143, 6.1745, 6.2347, 6.2949, 6.3551, 6.4153, 6.4755, 6.5357, 6.5959, 6.6561, 6.7163, 6.7766, 6.8368, 6.897, 6.9572, 7.0174, 7.0776, 7.1378, 7.198, 7.2582, 7.3184, 7.3786, 7.4388, 7.499, 7.5592],
+               [ 'line0', 0.0008, 0.0004, 0.0006, 0.0022, 0.002, 0.0042, 0.0066, 0.0078, 0.015, 0.0233, 0.0263, 0.0295, 0.0299, 0.0339, 0.0393, 0.0467, 0.0633, 0.0696, 0.0645, 0.0667, 0.0575, 0.0447, 0.0403, 0.0337, 0.0323, 0.0299, 0.0241, 0.0233, 0.0194, 0.0233, 0.0184, 0.0226, 0.021, 0.016, 0.013, 0.0094, 0.0104, 0.0074, 0.006, 0.0046],
+           ],
+         },
+         axis: {
+           x: {
+             tick: {
+               format: format_exp_ns,
+               values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+             }
+           },
+           y: {
+             tick: {
+               format: function(value) { return (value * 100).toPrecision(3) + "%"},
+               values: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+             }
+           }
+         },
+         tooltip: {
+           format: {
+             title: function(value) {
+               var quotient = 0.03010299940586492;
+               return format_exp_ns(value - quotient) + " - " + format_exp_ns(value + quotient);
+             }
+           }
+         }
+       });
+     }
+   </script>
+      </div>
+      <div id="gp5" class="glasspanel" style="display: none">
+        <a href="javascript: void(0);" class="popup_close" onclick="parentElement.style.display='none'; chartInPanel = chartInPanel.destroy();">Close X</a>
+  <div id="p5" class="popup_block"></div>
+  <script type="text/javascript">
+    function cp5() {
+      return c3.generate({
+        bindto: "#p5",
+        size: {
+          width: 800,
+          height: 600
+        },
+        padding: {
+          right: 35, top: 20
+        },
+        data: {
+          names: {
+              line0: 'ISPN9 - hotrod (max)',
+              line1: 'ISPN9 - hotrod (avg)',
+          },
+          xs: {
+              line0: 'x0',
+              line1: 'x1',
+          },
+          columns: [
+              [ 'x0',     0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43, 0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53, 0.54, 0.55, 0.56, 0.57, 0.58, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.73, 0.74, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87, 0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1, 1.01, 1.02, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.1, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18, 1.19, 1.2, 1.21, 1.22, 1.23, 1.24, 1.25, 1.26, 1.27, 1.28, 1.29, 1.3, 1.31, 1.32, 1.33, 1.34, 1.35, 1.36, 1.37, 1.38, 1.39, 1.4, 1.41, 1.42, 1.43, 1.44, 1.45, 1.46, 1.47, 1.48, 1.49, 1.5, 1.51, 1.52, 1.53, 1.55, 1.56, 1.57, 1.58, 1.6, 1.61, 1.62, 1.63, 1.64, 1.65, 1.66, 1.67, 1.68, 1.7, 1.71, 1.72, 1.73, 1.74, 1.75, 1.76, 1.77, 1.78, 1.79, 1.8, 1.81, 1.82, 1.83, 1.84, 1.85, 1.86, 1.87, 1.88, 1.89, 1.9, 1.91, 1.92, 1.93, 1.94, 1.96, 1.97, 1.98, 1.99, 2, 2.02, 2.03, 2.05, 2.06, 2.08, 2.09, 2.1, 2.11, 2.12, 2.15, 2.16, 2.17, 2.19, 2.22, 2.23, 2.25, 2.26, 2.28, 2.3, 2.31, 2.33, 2.35, 2.37, 2.39, 2.41, 2.46, 2.49, 2.52, 2.55, 2.58, 2.61, 2.65, 2.69, 2.74, 2.79, 2.85, 2.91, 2.99, 3.09, 3.22, 3.39, 3.69, 3.79],
+              [ 'x1', 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43, 0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53, 0.54, 0.55, 0.56, 0.57, 0.58, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.73, 0.74, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87, 0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1, 1.01, 1.02, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.1, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18, 1.19, 1.2, 1.21, 1.22, 1.23, 1.24, 1.25, 1.26, 1.27, 1.28, 1.29, 1.3, 1.31, 1.32, 1.33, 1.34, 1.35, 1.36, 1.37, 1.38, 1.39, 1.4, 1.41, 1.42, 1.43, 1.44, 1.45, 1.46, 1.47, 1.48, 1.49, 1.5, 1.51, 1.52, 1.53, 1.55, 1.56, 1.57, 1.58, 1.6, 1.61, 1.62, 1.63, 1.64, 1.65, 1.66, 1.67, 1.68, 1.7, 1.71, 1.72, 1.73, 1.74, 1.75, 1.76, 1.77, 1.78, 1.79, 1.8, 1.81, 1.82, 1.83, 1.84, 1.85, 1.86, 1.87, 1.88, 1.89, 1.9, 1.91, 1.92, 1.93, 1.94, 1.96, 1.97, 1.98, 1.99, 2, 2.02, 2.03, 2.05, 2.06, 2.08, 2.09, 2.1, 2.11, 2.12, 2.15, 2.16, 2.17, 2.19, 2.22, 2.23, 2.25, 2.26, 2.28, 2.3, 2.31, 2.33, 2.35, 2.37, 2.39, 2.41, 2.46, 2.49, 2.52, 2.55, 2.58, 2.61, 2.65, 2.69, 2.74, 2.79, 2.85, 2.91, 2.99, 3.09, 3.22, 3.39, 3.69, 3.79],
+              [ 'line0',     5.1242, 5.5878, 5.6861, 5.7362, 5.7826, 5.8272, 5.87, 5.9046, 5.9346, 5.976, 6.0051, 6.0273, 6.0501, 6.0718, 6.0924, 6.1065, 6.1229, 6.1387, 6.1514, 6.1638, 6.1758, 6.1875, 6.2012, 6.2144, 6.2251, 6.2356, 6.2478, 6.2617, 6.2732, 6.2826, 6.2954, 6.3026, 6.3148, 6.325, 6.3383, 6.348, 6.3574, 6.3667, 6.3788, 6.3876, 6.4019, 6.4158, 6.4239, 6.4371, 6.4499, 6.4599, 6.4721, 6.4863, 6.4955, 6.5067, 6.5198, 6.5346, 6.5448, 6.5549, 6.5704, 6.5799, 6.591, 6.6036, 6.6175, 6.6327, 6.6393, 6.649, 6.6647, 6.6738, 6.6886, 6.7001, 6.7086, 6.7223, 6.7356, 6.751, 6.7634, 6.7755, 6.7826, 6.7919, 6.8055, 6.8186, 6.8314, 6.8418, 6.8539, 6.8676, 6.8772, 6.8847, 6.892, 6.9046, 6.9099, 6.922, 6.9338, 6.9436, 6.9564, 6.9626, 6.9688, 6.9808, 6.9897, 6.9983, 7.004, 7.0124, 7.0179, 7.0233, 7.0313, 7.0366, 7.0418, 7.0495, 7.0545, 7.0595, 7.0645, 7.0718, 7.0766, 7.0837, 7.0906, 7.0952, 7.102, 7.1065, 7.1131, 7.1197, 7.1303, 7.1345, 7.1408, 7.1449, 7.1469, 7.1529, 7.1589, 7.1648, 7.1687, 7.182, 7.1857, 7.1894, 7.1931, 7.2003, 7.2092, 7.2127, 7.2162, 7.223, 7.2315, 7.2348, 7.2414, 7.2446, 7.2478, 7.2574, 7.2636, 7.2789, 7.2848, 7.2878, 7.2907, 7.2936, 7.3022, 7.305, 7.3078, 7.3134, 7.3162, 7.3189, 7.3243, 7.3297, 7.3376, 7.3428, 7.348, 7.353, 7.3679, 7.3704, 7.3752, 7.38, 7.3823, 7.3847, 7.387, 7.3963, 7.4008, 7.4053, 7.4075, 7.4098, 7.412, 7.4164, 7.4229, 7.4271, 7.4377, 7.4418, 7.4438, 7.4459, 7.4499, 7.452, 7.456, 7.4599, 7.4678, 7.4697, 7.4754, 7.483, 7.4849, 7.4867, 7.4886, 7.4977, 7.4995, 7.5031, 7.5084, 7.512, 7.5137, 7.5154, 7.5206, 7.5241, 7.5291, 7.5358, 7.5391, 7.5424, 7.5456, 7.5489, 7.5521, 7.5553, 7.5708, 7.5739, 7.5859, 7.5888, 7.5917, 7.5975, 7.6004, 7.6032, 7.6061, 7.6117, 7.6144, 7.6172, 7.6254, 7.6386, 7.6438, 7.6464, 7.649, 7.6541, 7.6566, 7.6616, 7.6665, 7.6762, 7.681, 7.6881, 7.6973, 7.7041, 7.7239, 7.7303, 7.7469, 7.753, 7.755, 7.761, 7.7688, 7.8095, 7.8499, 7.9071],
+              [ 'line1', 5.1226, 5.476, 5.5653, 5.6203, 5.6579, 5.6905, 5.7183, 5.7458, 5.7684, 5.7917, 5.814, 5.8343, 5.8537, 5.8699, 5.8877, 5.9027, 5.9157, 5.9292, 5.9411, 5.9535, 5.964, 5.974, 5.9846, 5.9947, 6.0032, 6.0128, 6.0209, 6.0295, 6.0372, 6.0444, 6.0535, 6.0592, 6.0664, 6.0734, 6.0819, 6.0883, 6.0947, 6.1002, 6.1064, 6.1128, 6.1186, 6.1255, 6.1307, 6.1371, 6.1432, 6.1485, 6.154, 6.1601, 6.1652, 6.1706, 6.1763, 6.1826, 6.187, 6.1929, 6.1991, 6.2038, 6.2092, 6.2152, 6.2195, 6.226, 6.2305, 6.236, 6.2408, 6.2459, 6.2519, 6.2573, 6.2619, 6.2663, 6.2709, 6.2764, 6.2812, 6.287, 6.2915, 6.2961, 6.3009, 6.3059, 6.311, 6.3154, 6.3204, 6.326, 6.3304, 6.3348, 6.3396, 6.3449, 6.3481, 6.353, 6.3586, 6.3617, 6.3677, 6.3703, 6.3755, 6.3796, 6.3838, 6.3878, 6.3914, 6.3954, 6.3991, 6.4034, 6.4065, 6.4103, 6.4146, 6.4178, 6.4235, 6.426, 6.4276, 6.4311, 6.4344, 6.4376, 6.4428, 6.4445, 6.4471, 6.4508, 6.4528, 6.4565, 6.4596, 6.4613, 6.4641, 6.4676, 6.4697, 6.4725, 6.475, 6.4775, 6.48, 6.4833, 6.4863, 6.4881, 6.4896, 6.4923, 6.4945, 6.4969, 6.4992, 6.5015, 6.5035, 6.5058, 6.5079, 6.5107, 6.5119, 6.5139, 6.5168, 6.519, 6.5211, 6.5224, 6.5242, 6.5255, 6.5286, 6.5291, 6.5313, 6.5331, 6.5349, 6.5372, 6.5381, 6.54, 6.5418, 6.5433, 6.5461, 6.5476, 6.5495, 6.551, 6.5536, 6.5561, 6.5576, 6.5581, 6.5591, 6.5607, 6.5617, 6.5633, 6.5649, 6.567, 6.5681, 6.5691, 6.5707, 6.5718, 6.5735, 6.5746, 6.5752, 6.5763, 6.5775, 6.5786, 6.5792, 6.5804, 6.5815, 6.5821, 6.5833, 6.5845, 6.5851, 6.5864, 6.587, 6.5882, 6.5889, 6.5901, 6.5908, 6.5914, 6.5933, 6.594, 6.5946, 6.596, 6.5966, 6.598, 6.5986, 6.6, 6.6007, 6.6021, 6.6027, 6.6034, 6.6042, 6.6049, 6.6064, 6.6071, 6.6079, 6.6087, 6.6102, 6.611, 6.6117, 6.6125, 6.6133, 6.6141, 6.6149, 6.6157, 6.6166, 6.6174, 6.6183, 6.6191, 6.6209, 6.6217, 6.6226, 6.6235, 6.6244, 6.6253, 6.6263, 6.6272, 6.6282, 6.6292, 6.6303, 6.6313, 6.6324, 6.6335, 6.6346, 6.6358, 6.6371, 6.6387],
+          ],
+        },
+        color: {
+          pattern: series_colors_dup()
+        },
+        axis: {
+          x: {
+            tick: {
+              format: format_percentile,
+              values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            }
+          },
+          y: {
+            tick: {
+              format: format_exp_ns,
+              values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+            }
+          }
+        },
+        point: {
+          show: false
+        },
+        zoom: {
+          enabled: true
+        }
+      });
+    }
+  </script>
+      </div>
+
+      <a href="javascript: void(0);" onClick="javascript: chartInPanel = ch5(); show_panel('gh5', chartInPanel.destroy);">histogram</a> <br>
+      <a href="javascript: void(0);" onClick="javascript: chartInPanel = cp5(); show_panel('gp5', chartInPanel.destroy);">percentiles</a>
+    </td>
+
+
+                  </tr><tr class="h_3 collapsed">
+                    <th>Node 0</th>
+
+
+
+
+    <td class=" firstCellStyle" title="">
+      4,989
+    </td>
+    <td class=" rowStyle errorData" title="">
+      0
+    </td>
+
+      <td class=" rowStyle" title="">
+        4.35&nbsp;ms
+      </td>
+      <td class=" rowStyle" title="">
+        6.58&nbsp;ms
+      </td>
+
+    <td class=" rowStyle" title="">
+    80.74&nbsp;ms
+    </td>
+
+
+
+
+        <td class=" rowStyle" title="">
+          1.97&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          11.01&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          16.45&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          33.42&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          56.89&nbsp;ms
+        </td>
+
+        <td class=" rowStyle" title="">
+          80.74&nbsp;ms
+        </td>
+
+  <!-- TODO: currently the charts for each configuration are generated multiple times;
+             it would be nicer to have them only once, but that would require another loop
+             through all clusters/iterations/nodes/threads. On the other hand the chart
+             is created when opened and destroyed when closed, so it doesn't waste
+             all the resources in runtime. -->
+    <td class=" rowStyle" title="">
+      
+      <div id="gh6" class="glasspanel" style="display: none">
+        <a href="javascript: void(0);" class="popup_close" onclick="parentElement.style.display='none'; chartInPanel = chartInPanel.destroy();">Close X</a>
+  <div id="h6" class="popup_block"></div>
+  <script type="text/javascript">
+     function ch6() {
+       return c3.generate({
+         bindto: "#h6",
+         size: {
+           width: 800,
+           height: 600
+         },
+         padding: {
+           right: 35, top: 20
+         },
+         data: {
+           type: 'step',
+           names: {
+               line0: 'ISPN9 - hotrod',
+           },
+           x: 'x',
+           columns: [
+               [ 'x', 5.151, 5.2112, 5.2714, 5.3316, 5.3918, 5.452, 5.5122, 5.5724, 5.6326, 5.6928, 5.7531, 5.8133, 5.8735, 5.9337, 5.9939, 6.0541, 6.1143, 6.1745, 6.2347, 6.2949, 6.3551, 6.4153, 6.4755, 6.5357, 6.5959, 6.6561, 6.7163, 6.7766, 6.8368, 6.897, 6.9572, 7.0174, 7.0776, 7.1378, 7.198, 7.2582, 7.3184, 7.3786, 7.4388, 7.499, 7.5592],
+               [ 'line0', 0.0008, 0.0004, 0.0006, 0.0022, 0.002, 0.0042, 0.0066, 0.0078, 0.015, 0.0233, 0.0263, 0.0295, 0.0299, 0.0339, 0.0393, 0.0467, 0.0633, 0.0696, 0.0645, 0.0667, 0.0575, 0.0447, 0.0403, 0.0337, 0.0323, 0.0299, 0.0241, 0.0233, 0.0194, 0.0233, 0.0184, 0.0226, 0.021, 0.016, 0.013, 0.0094, 0.0104, 0.0074, 0.006, 0.0046],
+           ],
+         },
+         axis: {
+           x: {
+             tick: {
+               format: format_exp_ns,
+               values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+             }
+           },
+           y: {
+             tick: {
+               format: function(value) { return (value * 100).toPrecision(3) + "%"},
+               values: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+             }
+           }
+         },
+         tooltip: {
+           format: {
+             title: function(value) {
+               var quotient = 0.03010299940586492;
+               return format_exp_ns(value - quotient) + " - " + format_exp_ns(value + quotient);
+             }
+           }
+         }
+       });
+     }
+   </script>
+      </div>
+      <div id="gp6" class="glasspanel" style="display: none">
+        <a href="javascript: void(0);" class="popup_close" onclick="parentElement.style.display='none'; chartInPanel = chartInPanel.destroy();">Close X</a>
+  <div id="p6" class="popup_block"></div>
+  <script type="text/javascript">
+    function cp6() {
+      return c3.generate({
+        bindto: "#p6",
+        size: {
+          width: 800,
+          height: 600
+        },
+        padding: {
+          right: 35, top: 20
+        },
+        data: {
+          names: {
+              line0: 'ISPN9 - hotrod (max)',
+              line1: 'ISPN9 - hotrod (avg)',
+          },
+          xs: {
+              line0: 'x0',
+              line1: 'x1',
+          },
+          columns: [
+              [ 'x0',     0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43, 0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53, 0.54, 0.55, 0.56, 0.57, 0.58, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.73, 0.74, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87, 0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1, 1.01, 1.02, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.1, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18, 1.19, 1.2, 1.21, 1.22, 1.23, 1.24, 1.25, 1.26, 1.27, 1.28, 1.29, 1.3, 1.31, 1.32, 1.33, 1.34, 1.35, 1.36, 1.37, 1.38, 1.39, 1.4, 1.41, 1.42, 1.43, 1.44, 1.45, 1.46, 1.47, 1.48, 1.49, 1.5, 1.51, 1.52, 1.53, 1.55, 1.56, 1.57, 1.58, 1.6, 1.61, 1.62, 1.63, 1.64, 1.65, 1.66, 1.67, 1.68, 1.7, 1.71, 1.72, 1.73, 1.74, 1.75, 1.76, 1.77, 1.78, 1.79, 1.8, 1.81, 1.82, 1.83, 1.84, 1.85, 1.86, 1.87, 1.88, 1.89, 1.9, 1.91, 1.92, 1.93, 1.94, 1.96, 1.97, 1.98, 1.99, 2, 2.02, 2.03, 2.05, 2.06, 2.08, 2.09, 2.1, 2.11, 2.12, 2.15, 2.16, 2.17, 2.19, 2.22, 2.23, 2.25, 2.26, 2.28, 2.3, 2.31, 2.33, 2.35, 2.37, 2.39, 2.41, 2.46, 2.49, 2.52, 2.55, 2.58, 2.61, 2.65, 2.69, 2.74, 2.79, 2.85, 2.91, 2.99, 3.09, 3.22, 3.39, 3.69, 3.79],
+              [ 'x1', 0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, 0.17, 0.18, 0.19, 0.2, 0.21, 0.22, 0.23, 0.24, 0.25, 0.26, 0.27, 0.28, 0.29, 0.3, 0.31, 0.32, 0.33, 0.34, 0.35, 0.36, 0.37, 0.38, 0.39, 0.4, 0.41, 0.42, 0.43, 0.44, 0.45, 0.46, 0.47, 0.48, 0.49, 0.5, 0.51, 0.52, 0.53, 0.54, 0.55, 0.56, 0.57, 0.58, 0.59, 0.6, 0.61, 0.62, 0.63, 0.64, 0.65, 0.66, 0.67, 0.68, 0.69, 0.7, 0.71, 0.72, 0.73, 0.74, 0.75, 0.76, 0.77, 0.78, 0.79, 0.8, 0.81, 0.82, 0.83, 0.84, 0.85, 0.86, 0.87, 0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 1, 1.01, 1.02, 1.03, 1.04, 1.05, 1.06, 1.07, 1.08, 1.09, 1.1, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.18, 1.19, 1.2, 1.21, 1.22, 1.23, 1.24, 1.25, 1.26, 1.27, 1.28, 1.29, 1.3, 1.31, 1.32, 1.33, 1.34, 1.35, 1.36, 1.37, 1.38, 1.39, 1.4, 1.41, 1.42, 1.43, 1.44, 1.45, 1.46, 1.47, 1.48, 1.49, 1.5, 1.51, 1.52, 1.53, 1.55, 1.56, 1.57, 1.58, 1.6, 1.61, 1.62, 1.63, 1.64, 1.65, 1.66, 1.67, 1.68, 1.7, 1.71, 1.72, 1.73, 1.74, 1.75, 1.76, 1.77, 1.78, 1.79, 1.8, 1.81, 1.82, 1.83, 1.84, 1.85, 1.86, 1.87, 1.88, 1.89, 1.9, 1.91, 1.92, 1.93, 1.94, 1.96, 1.97, 1.98, 1.99, 2, 2.02, 2.03, 2.05, 2.06, 2.08, 2.09, 2.1, 2.11, 2.12, 2.15, 2.16, 2.17, 2.19, 2.22, 2.23, 2.25, 2.26, 2.28, 2.3, 2.31, 2.33, 2.35, 2.37, 2.39, 2.41, 2.46, 2.49, 2.52, 2.55, 2.58, 2.61, 2.65, 2.69, 2.74, 2.79, 2.85, 2.91, 2.99, 3.09, 3.22, 3.39, 3.69, 3.79],
+              [ 'line0',     5.1242, 5.5878, 5.6861, 5.7362, 5.7826, 5.8272, 5.87, 5.9046, 5.9346, 5.976, 6.0051, 6.0273, 6.0501, 6.0718, 6.0924, 6.1065, 6.1229, 6.1387, 6.1514, 6.1638, 6.1758, 6.1875, 6.2012, 6.2144, 6.2251, 6.2356, 6.2478, 6.2617, 6.2732, 6.2826, 6.2954, 6.3026, 6.3148, 6.325, 6.3383, 6.348, 6.3574, 6.3667, 6.3788, 6.3876, 6.4019, 6.4158, 6.4239, 6.4371, 6.4499, 6.4599, 6.4721, 6.4863, 6.4955, 6.5067, 6.5198, 6.5346, 6.5448, 6.5549, 6.5704, 6.5799, 6.591, 6.6036, 6.6175, 6.6327, 6.6393, 6.649, 6.6647, 6.6738, 6.6886, 6.7001, 6.7086, 6.7223, 6.7356, 6.751, 6.7634, 6.7755, 6.7826, 6.7919, 6.8055, 6.8186, 6.8314, 6.8418, 6.8539, 6.8676, 6.8772, 6.8847, 6.892, 6.9046, 6.9099, 6.922, 6.9338, 6.9436, 6.9564, 6.9626, 6.9688, 6.9808, 6.9897, 6.9983, 7.004, 7.0124, 7.0179, 7.0233, 7.0313, 7.0366, 7.0418, 7.0495, 7.0545, 7.0595, 7.0645, 7.0718, 7.0766, 7.0837, 7.0906, 7.0952, 7.102, 7.1065, 7.1131, 7.1197, 7.1303, 7.1345, 7.1408, 7.1449, 7.1469, 7.1529, 7.1589, 7.1648, 7.1687, 7.182, 7.1857, 7.1894, 7.1931, 7.2003, 7.2092, 7.2127, 7.2162, 7.223, 7.2315, 7.2348, 7.2414, 7.2446, 7.2478, 7.2574, 7.2636, 7.2789, 7.2848, 7.2878, 7.2907, 7.2936, 7.3022, 7.305, 7.3078, 7.3134, 7.3162, 7.3189, 7.3243, 7.3297, 7.3376, 7.3428, 7.348, 7.353, 7.3679, 7.3704, 7.3752, 7.38, 7.3823, 7.3847, 7.387, 7.3963, 7.4008, 7.4053, 7.4075, 7.4098, 7.412, 7.4164, 7.4229, 7.4271, 7.4377, 7.4418, 7.4438, 7.4459, 7.4499, 7.452, 7.456, 7.4599, 7.4678, 7.4697, 7.4754, 7.483, 7.4849, 7.4867, 7.4886, 7.4977, 7.4995, 7.5031, 7.5084, 7.512, 7.5137, 7.5154, 7.5206, 7.5241, 7.5291, 7.5358, 7.5391, 7.5424, 7.5456, 7.5489, 7.5521, 7.5553, 7.5708, 7.5739, 7.5859, 7.5888, 7.5917, 7.5975, 7.6004, 7.6032, 7.6061, 7.6117, 7.6144, 7.6172, 7.6254, 7.6386, 7.6438, 7.6464, 7.649, 7.6541, 7.6566, 7.6616, 7.6665, 7.6762, 7.681, 7.6881, 7.6973, 7.7041, 7.7239, 7.7303, 7.7469, 7.753, 7.755, 7.761, 7.7688, 7.8095, 7.8499, 7.9071],
+              [ 'line1', 5.1226, 5.476, 5.5653, 5.6203, 5.6579, 5.6905, 5.7183, 5.7458, 5.7684, 5.7917, 5.814, 5.8343, 5.8537, 5.8699, 5.8877, 5.9027, 5.9157, 5.9292, 5.9411, 5.9535, 5.964, 5.974, 5.9846, 5.9947, 6.0032, 6.0128, 6.0209, 6.0295, 6.0372, 6.0444, 6.0535, 6.0592, 6.0664, 6.0734, 6.0819, 6.0883, 6.0947, 6.1002, 6.1064, 6.1128, 6.1186, 6.1255, 6.1307, 6.1371, 6.1432, 6.1485, 6.154, 6.1601, 6.1652, 6.1706, 6.1763, 6.1826, 6.187, 6.1929, 6.1991, 6.2038, 6.2092, 6.2152, 6.2195, 6.226, 6.2305, 6.236, 6.2408, 6.2459, 6.2519, 6.2573, 6.2619, 6.2663, 6.2709, 6.2764, 6.2812, 6.287, 6.2915, 6.2961, 6.3009, 6.3059, 6.311, 6.3154, 6.3204, 6.326, 6.3304, 6.3348, 6.3396, 6.3449, 6.3481, 6.353, 6.3586, 6.3617, 6.3677, 6.3703, 6.3755, 6.3796, 6.3838, 6.3878, 6.3914, 6.3954, 6.3991, 6.4034, 6.4065, 6.4103, 6.4146, 6.4178, 6.4235, 6.426, 6.4276, 6.4311, 6.4344, 6.4376, 6.4428, 6.4445, 6.4471, 6.4508, 6.4528, 6.4565, 6.4596, 6.4613, 6.4641, 6.4676, 6.4697, 6.4725, 6.475, 6.4775, 6.48, 6.4833, 6.4863, 6.4881, 6.4896, 6.4923, 6.4945, 6.4969, 6.4992, 6.5015, 6.5035, 6.5058, 6.5079, 6.5107, 6.5119, 6.5139, 6.5168, 6.519, 6.5211, 6.5224, 6.5242, 6.5255, 6.5286, 6.5291, 6.5313, 6.5331, 6.5349, 6.5372, 6.5381, 6.54, 6.5418, 6.5433, 6.5461, 6.5476, 6.5495, 6.551, 6.5536, 6.5561, 6.5576, 6.5581, 6.5591, 6.5607, 6.5617, 6.5633, 6.5649, 6.567, 6.5681, 6.5691, 6.5707, 6.5718, 6.5735, 6.5746, 6.5752, 6.5763, 6.5775, 6.5786, 6.5792, 6.5804, 6.5815, 6.5821, 6.5833, 6.5845, 6.5851, 6.5864, 6.587, 6.5882, 6.5889, 6.5901, 6.5908, 6.5914, 6.5933, 6.594, 6.5946, 6.596, 6.5966, 6.598, 6.5986, 6.6, 6.6007, 6.6021, 6.6027, 6.6034, 6.6042, 6.6049, 6.6064, 6.6071, 6.6079, 6.6087, 6.6102, 6.611, 6.6117, 6.6125, 6.6133, 6.6141, 6.6149, 6.6157, 6.6166, 6.6174, 6.6183, 6.6191, 6.6209, 6.6217, 6.6226, 6.6235, 6.6244, 6.6253, 6.6263, 6.6272, 6.6282, 6.6292, 6.6303, 6.6313, 6.6324, 6.6335, 6.6346, 6.6358, 6.6371, 6.6387],
+          ],
+        },
+        color: {
+          pattern: series_colors_dup()
+        },
+        axis: {
+          x: {
+            tick: {
+              format: format_percentile,
+              values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            }
+          },
+          y: {
+            tick: {
+              format: format_exp_ns,
+              values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+            }
+          }
+        },
+        point: {
+          show: false
+        },
+        zoom: {
+          enabled: true
+        }
+      });
+    }
+  </script>
+      </div>
+
+      <a href="javascript: void(0);" onClick="javascript: chartInPanel = ch6(); show_panel('gh6', chartInPanel.destroy);">histogram</a> <br>
+      <a href="javascript: void(0);" onClick="javascript: chartInPanel = cp6(); show_panel('gp6', chartInPanel.destroy);">percentiles</a>
+    </td>
+
+ <!-- generate thread stats -->
+                                  </tr><tr class="h_3 collapsed">
+                    <th>Node 1</th>
+
+ <!-- generate thread stats -->
+                                  </tr><tr class="h_3 collapsed">
+                    <th>Node 2</th>
+
+ <!-- generate thread stats -->
+                                  </tr><tr class="h_3 collapsed">
+                    <th>Node 3</th>
+
+ <!-- generate thread stats -->
+                 <!-- node -->
+               <!-- generate node stats -->
+             <!-- iteration -->
+          </tr>
+         <!-- report -->
+      </table>
+     <!-- aggregations -->
+  <!-- operation -->
+</body>
+</html>
+

@@ -1,0 +1,831 @@
+<html>
+<head>
+   <title>RadarGun benchmark</title>
+   <script src="script.js"></script>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <h1>RadarGun benchmark report</h1>
+   <h2>Tests</h2>
+   <ul>
+         <li>
+            <a href="test_writes-get.html">writes-get</a>
+         </li>
+   </ul>
+   <h2>Resource utilization</h2>
+      <ul>
+            <li>
+               <a href="SYSMONITOR_timeline_ISPN9 - hotrod_0.html">ISPN9 - hotrod on Cluster[client=1, echo=3]</a>
+            </li>
+      </ul>
+   <h2>Configurations</h2>
+      RadarGun benchmark file: <a href="main-config.xml">link</a> <br/>
+      <br/><br/>
+
+      The benchmark was executed on following configurations and cluster sizes: <br/>
+   <ul>
+         <li>
+            <b>ISPN9 - hotrod</b> on cluster with 4 workers: Cluster[client=1, echo=3]. <br/>
+               Setups: <br/>
+            <ul>
+                  <li>
+                     Group: echo
+                     <ul>
+                        <li>Plugin: echo</li>
+                        <li>Service: echo</li>
+                              <li>Configuration file:  no file</li>
+
+                     </ul>
+                        <li>
+                           Properties:
+                            <ul>
+                            </ul>
+                        </li>
+                        <li>
+                           VM args:
+                            <ul>
+                            </ul>
+                        </li>
+                  </li>
+                  <li>
+                     Group: client
+                     <ul>
+                        <li>Plugin: infinispan130</li>
+                        <li>Service: hotrod</li>
+                              <li>Configuration file:  no file</li>
+
+                     </ul>
+                        <li>
+                           Properties:
+                            <ul>
+<li>
+   servers : ${env.ISPN_SERVERS:127.0.0.1:11222}
+</li>
+<li>
+   properties-path : conf/hotrod-client.properties
+</li>
+                            </ul>
+                        </li>
+                        <li>
+                           VM args:
+                            <ul>
+   <li>
+      memory:
+      <ul>
+<li>
+   max : 1G
+</li>
+      </ul>
+   </li>
+                            </ul>
+                        </li>
+                  </li>
+            </ul>
+         </li>
+   </ul>
+   <h2>Scenario</h2>
+      Note that some properties may have not been resolved correctly as these depend on local properties. <br/>
+      These stages have been used for the benchmark: <br/>
+   <ul>
+            <li>
+               <span class="onClick" onclick="switch_li_display('e0'); switch_li_display('e1'); switch_li_display('e2'); switch_li_display('e3'); switch_li_display('e4'); ">
+                     ScenarioInit
+               </span>
+               <ul>
+                        <li id="e0" class="none">
+                              exit-on-failure = false
+                        </li>
+                        <li id="e1" class="none">
+                              groups = null
+                        </li>
+                        <li id="e2" class="none">
+                              heap-dump-dir = null
+                        </li>
+                        <li id="e3" class="none">
+                              roles = null
+                        </li>
+                        <li id="e4" class="none">
+                              workers = null
+                        </li>
+               </ul>
+            </li>
+            <li>
+               <span class="onClick" onclick="switch_li_display('e5'); switch_li_display('e6'); switch_li_display('e7'); switch_li_display('e8'); ">
+                     BeforeServiceStart
+               </span>
+               <ul>
+                        <li id="e5" class="none">
+                              exit-on-failure = false
+                        </li>
+                        <li id="e6" class="none">
+                              groups = null
+                        </li>
+                        <li id="e7" class="none">
+                              roles = null
+                        </li>
+                        <li id="e8" class="none">
+                              workers = null
+                        </li>
+               </ul>
+            </li>
+            <li>
+               <span class="onClick" onclick="switch_li_display('e9'); switch_li_display('e10'); switch_li_display('e11'); switch_li_display('e12'); switch_li_display('e13'); switch_li_display('e14'); switch_li_display('e15'); switch_li_display('e16'); switch_li_display('e17'); switch_li_display('e18'); switch_li_display('e19'); switch_li_display('e20'); switch_li_display('e21'); ">
+                     ServiceStart
+               </span>
+               <ul>
+                        <li id="e9" class="none">
+                              cluster-formation-timeout = 3 mins 0 secs
+                        </li>
+                        <li id="e10" class="none">
+                              delay-after-first-worker-starts = 5.000 secs
+                        </li>
+                        <li id="e11" class="none">
+                              delay-between-starting-workers = 0.500 secs
+                        </li>
+                        <li id="e12" class="none">
+                              dump-config = true
+                        </li>
+                        <li id="e13" class="none">
+                              exit-on-failure = false
+                        </li>
+                        <li id="e14" class="none">
+                              expect-num-workers = null
+                        </li>
+                        <li id="e15" class="none">
+                              groups = null
+                        </li>
+                        <li id="e16" class="none">
+                              may-fail-on = null
+                        </li>
+                        <li id="e17" class="none">
+                              reachable = null
+                        </li>
+                        <li id="e18" class="none">
+                              roles = null
+                        </li>
+                        <li id="e19" class="none">
+                              stagger-worker-startup = true
+                        </li>
+                        <li id="e20" class="none">
+                              validate-cluster = true
+                        </li>
+                        <li id="e21" class="none">
+                              workers = null
+                        </li>
+               </ul>
+            </li>
+            <li>
+               <span class="onClick" onclick="switch_li_display('e22'); switch_li_display('e23'); switch_li_display('e24'); switch_li_display('e25'); ">
+                     AfterServiceStart
+               </span>
+               <ul>
+                        <li id="e22" class="none">
+                              exit-on-failure = false
+                        </li>
+                        <li id="e23" class="none">
+                              groups = null
+                        </li>
+                        <li id="e24" class="none">
+                              roles = null
+                        </li>
+                        <li id="e25" class="none">
+                              workers = null
+                        </li>
+               </ul>
+            </li>
+            <li>
+               <span class="onClick" onclick="switch_li_display('e26'); switch_li_display('e27'); switch_li_display('e28'); switch_li_display('e29'); switch_li_display('e30'); switch_li_display('e31'); switch_li_display('e32'); switch_li_display('e33'); switch_li_display('e34'); switch_li_display('e35'); ">
+                     RemoteMonitorStart
+               </span>
+               <ul>
+                        <li id="e26" class="none">
+                              exit-on-failure = false
+                        </li>
+                        <li>
+                           <b>groups = [ echo ]</b>
+                           <small class="def27 onClick expanded"
+                                 onclick="switch_class_by_class('def27','expanded','collapsed');">show definition</small>
+
+                            <span class="def27 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def27','expanded','collapsed');">hide definition:</small>
+                               echo
+                            </span>
+                        </li>
+                        <li>
+                           <b>interface-name = eth0</b>
+                           <small class="def28 onClick expanded"
+                                 onclick="switch_class_by_class('def28','expanded','collapsed');">show definition</small>
+
+                            <span class="def28 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def28','expanded','collapsed');">hide definition:</small>
+                               eth0
+                            </span>
+                        </li>
+                        <li>
+                           <b>jmx-service-url = service:jmx:rmi:///jndi/rmi://10.74.178.112:9999/jmxrmi</b>
+                           <small class="def29 onClick expanded"
+                                 onclick="switch_class_by_class('def29','expanded','collapsed');">show definition</small>
+
+                            <span class="def29 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def29','expanded','collapsed');">hide definition:</small>
+                               service:jmx:rmi:///jndi/rmi://10.74.178.112:9999/jmxrmi
+                            </span>
+                        </li>
+                        <li id="e30" class="none">
+                              period = 1.000 secs
+                        </li>
+                        <li id="e31" class="none">
+                              roles = null
+                        </li>
+                        <li id="e32" class="none">
+                              thread-dump = false
+                        </li>
+                        <li id="e33" class="none">
+                              thread-dump-locked-monitors = true
+                        </li>
+                        <li id="e34" class="none">
+                              thread-dump-locked-synchronizers = true
+                        </li>
+                        <li id="e35" class="none">
+                              workers = null
+                        </li>
+               </ul>
+            </li>
+            <li>
+               <span class="onClick" onclick="switch_li_display('e36'); switch_li_display('e37'); switch_li_display('e38'); switch_li_display('e39'); switch_li_display('e40'); switch_li_display('e41'); switch_li_display('e42'); switch_li_display('e43'); switch_li_display('e44'); switch_li_display('e45'); ">
+                     RemoteMonitorStart
+               </span>
+               <ul>
+                        <li id="e36" class="none">
+                              exit-on-failure = false
+                        </li>
+                        <li>
+                           <b>groups = [ echo ]</b>
+                           <small class="def37 onClick expanded"
+                                 onclick="switch_class_by_class('def37','expanded','collapsed');">show definition</small>
+
+                            <span class="def37 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def37','expanded','collapsed');">hide definition:</small>
+                               echo
+                            </span>
+                        </li>
+                        <li>
+                           <b>interface-name = eth0</b>
+                           <small class="def38 onClick expanded"
+                                 onclick="switch_class_by_class('def38','expanded','collapsed');">show definition</small>
+
+                            <span class="def38 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def38','expanded','collapsed');">hide definition:</small>
+                               eth0
+                            </span>
+                        </li>
+                        <li>
+                           <b>jmx-service-url = service:jmx:rmi:///jndi/rmi://10.74.180.93:9999/jmxrmi</b>
+                           <small class="def39 onClick expanded"
+                                 onclick="switch_class_by_class('def39','expanded','collapsed');">show definition</small>
+
+                            <span class="def39 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def39','expanded','collapsed');">hide definition:</small>
+                               service:jmx:rmi:///jndi/rmi://10.74.180.93:9999/jmxrmi
+                            </span>
+                        </li>
+                        <li id="e40" class="none">
+                              period = 1.000 secs
+                        </li>
+                        <li id="e41" class="none">
+                              roles = null
+                        </li>
+                        <li id="e42" class="none">
+                              thread-dump = false
+                        </li>
+                        <li id="e43" class="none">
+                              thread-dump-locked-monitors = true
+                        </li>
+                        <li id="e44" class="none">
+                              thread-dump-locked-synchronizers = true
+                        </li>
+                        <li id="e45" class="none">
+                              workers = null
+                        </li>
+               </ul>
+            </li>
+            <li>
+               <span class="onClick" onclick="switch_li_display('e46'); switch_li_display('e47'); switch_li_display('e48'); switch_li_display('e49'); switch_li_display('e50'); switch_li_display('e51'); switch_li_display('e52'); switch_li_display('e53'); switch_li_display('e54'); switch_li_display('e55'); ">
+                     RemoteMonitorStart
+               </span>
+               <ul>
+                        <li id="e46" class="none">
+                              exit-on-failure = false
+                        </li>
+                        <li>
+                           <b>groups = [ echo ]</b>
+                           <small class="def47 onClick expanded"
+                                 onclick="switch_class_by_class('def47','expanded','collapsed');">show definition</small>
+
+                            <span class="def47 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def47','expanded','collapsed');">hide definition:</small>
+                               echo
+                            </span>
+                        </li>
+                        <li>
+                           <b>interface-name = eth0</b>
+                           <small class="def48 onClick expanded"
+                                 onclick="switch_class_by_class('def48','expanded','collapsed');">show definition</small>
+
+                            <span class="def48 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def48','expanded','collapsed');">hide definition:</small>
+                               eth0
+                            </span>
+                        </li>
+                        <li>
+                           <b>jmx-service-url = service:jmx:rmi:///jndi/rmi://10.74.183.99:9999/jmxrmi</b>
+                           <small class="def49 onClick expanded"
+                                 onclick="switch_class_by_class('def49','expanded','collapsed');">show definition</small>
+
+                            <span class="def49 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def49','expanded','collapsed');">hide definition:</small>
+                               service:jmx:rmi:///jndi/rmi://10.74.183.99:9999/jmxrmi
+                            </span>
+                        </li>
+                        <li id="e50" class="none">
+                              period = 1.000 secs
+                        </li>
+                        <li id="e51" class="none">
+                              roles = null
+                        </li>
+                        <li id="e52" class="none">
+                              thread-dump = false
+                        </li>
+                        <li id="e53" class="none">
+                              thread-dump-locked-monitors = true
+                        </li>
+                        <li id="e54" class="none">
+                              thread-dump-locked-synchronizers = true
+                        </li>
+                        <li id="e55" class="none">
+                              workers = null
+                        </li>
+               </ul>
+            </li>
+            <li>
+               <span class="onClick" onclick="switch_li_display('e56'); switch_li_display('e57'); switch_li_display('e58'); switch_li_display('e59'); switch_li_display('e60'); switch_li_display('e61'); switch_li_display('e62'); switch_li_display('e63'); switch_li_display('e64'); ">
+                     MonitorStart
+               </span>
+               <ul>
+                        <li id="e56" class="none">
+                              exit-on-failure = false
+                        </li>
+                        <li>
+                           <b>groups = [ client ]</b>
+                           <small class="def57 onClick expanded"
+                                 onclick="switch_class_by_class('def57','expanded','collapsed');">show definition</small>
+
+                            <span class="def57 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def57','expanded','collapsed');">hide definition:</small>
+                               client
+                            </span>
+                        </li>
+                        <li id="e58" class="none">
+                              interface-name = null
+                        </li>
+                        <li id="e59" class="none">
+                              period = 1.000 secs
+                        </li>
+                        <li id="e60" class="none">
+                              roles = null
+                        </li>
+                        <li id="e61" class="none">
+                              thread-dump = false
+                        </li>
+                        <li id="e62" class="none">
+                              thread-dump-locked-monitors = true
+                        </li>
+                        <li id="e63" class="none">
+                              thread-dump-locked-synchronizers = true
+                        </li>
+                        <li id="e64" class="none">
+                              workers = null
+                        </li>
+               </ul>
+            </li>
+            <li>
+               <span class="onClick" onclick="switch_li_display('e65'); switch_li_display('e66'); switch_li_display('e67'); switch_li_display('e68'); switch_li_display('e69'); switch_li_display('e70'); ">
+                     Define
+               </span>
+               <ul>
+                        <li id="e65" class="none">
+                              exit-on-failure = false
+                        </li>
+                        <li id="e66" class="none">
+                              groups = null
+                        </li>
+                        <li id="e67" class="none">
+                              roles = null
+                        </li>
+                        <li>
+                           <b>value = 4588</b>
+                           <small class="def68 onClick expanded"
+                                 onclick="switch_class_by_class('def68','expanded','collapsed');">show definition</small>
+
+                            <span class="def68 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def68','expanded','collapsed');">hide definition:</small>
+                               4588
+                            </span>
+                        </li>
+                        <li>
+                           <b>var = entry.size</b>
+                           <small class="def69 onClick expanded"
+                                 onclick="switch_class_by_class('def69','expanded','collapsed');">show definition</small>
+
+                            <span class="def69 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def69','expanded','collapsed');">hide definition:</small>
+                               entry.size
+                            </span>
+                        </li>
+                        <li id="e70" class="none">
+                              workers = null
+                        </li>
+               </ul>
+            </li>
+            <li>
+               <span class="onClick" onclick="switch_li_display('e71'); switch_li_display('e72'); switch_li_display('e73'); switch_li_display('e74'); switch_li_display('e75'); switch_li_display('e76'); ">
+                     Define
+               </span>
+               <ul>
+                        <li id="e71" class="none">
+                              exit-on-failure = false
+                        </li>
+                        <li id="e72" class="none">
+                              groups = null
+                        </li>
+                        <li id="e73" class="none">
+                              roles = null
+                        </li>
+                        <li>
+                           <b>value = my-cache</b>
+                           <small class="def74 onClick expanded"
+                                 onclick="switch_class_by_class('def74','expanded','collapsed');">show definition</small>
+
+                            <span class="def74 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def74','expanded','collapsed');">hide definition:</small>
+                               my-cache
+                            </span>
+                        </li>
+                        <li>
+                           <b>var = cache.name</b>
+                           <small class="def75 onClick expanded"
+                                 onclick="switch_class_by_class('def75','expanded','collapsed');">show definition</small>
+
+                            <span class="def75 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def75','expanded','collapsed');">hide definition:</small>
+                               cache.name
+                            </span>
+                        </li>
+                        <li id="e76" class="none">
+                              workers = null
+                        </li>
+               </ul>
+            </li>
+            <li>
+               <span class="onClick" onclick="switch_li_display('e77'); switch_li_display('e78'); switch_li_display('e79'); switch_li_display('e80'); switch_li_display('e81'); switch_li_display('e82'); ">
+                     Define
+               </span>
+               <ul>
+                        <li id="e77" class="none">
+                              exit-on-failure = false
+                        </li>
+                        <li id="e78" class="none">
+                              groups = null
+                        </li>
+                        <li id="e79" class="none">
+                              roles = null
+                        </li>
+                        <li>
+                           <b>value = 10000</b>
+                           <small class="def80 onClick expanded"
+                                 onclick="switch_class_by_class('def80','expanded','collapsed');">show definition</small>
+
+                            <span class="def80 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def80','expanded','collapsed');">hide definition:</small>
+                               10000
+                            </span>
+                        </li>
+                        <li>
+                           <b>var = num.entries</b>
+                           <small class="def81 onClick expanded"
+                                 onclick="switch_class_by_class('def81','expanded','collapsed');">show definition</small>
+
+                            <span class="def81 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def81','expanded','collapsed');">hide definition:</small>
+                               num.entries
+                            </span>
+                        </li>
+                        <li id="e82" class="none">
+                              workers = null
+                        </li>
+               </ul>
+            </li>
+            <li>
+               <span class="onClick" onclick="switch_li_display('e83'); switch_li_display('e84'); switch_li_display('e85'); switch_li_display('e86'); switch_li_display('e87'); switch_li_display('e88'); switch_li_display('e89'); switch_li_display('e90'); switch_li_display('e91'); switch_li_display('e92'); switch_li_display('e93'); switch_li_display('e94'); switch_li_display('e95'); switch_li_display('e96'); switch_li_display('e97'); switch_li_display('e98'); switch_li_display('e99'); switch_li_display('e100'); switch_li_display('e101'); switch_li_display('e102'); switch_li_display('e103'); switch_li_display('e104'); switch_li_display('e105'); switch_li_display('e106'); switch_li_display('e107'); switch_li_display('e108'); switch_li_display('e109'); switch_li_display('e110'); switch_li_display('e111'); switch_li_display('e112'); switch_li_display('e113'); switch_li_display('e114'); switch_li_display('e115'); switch_li_display('e116'); switch_li_display('e117'); switch_li_display('e118'); ">
+                     BasicOperationsTest
+               </span>
+               <ul>
+                        <li id="e83" class="none">
+                              amend-test = false
+                        </li>
+                        <li>
+                           <b>cache-selector = UseCache {cache=my-cache }</b>
+                           <small class="def84 onClick expanded"
+                                 onclick="switch_class_by_class('def84','expanded','collapsed');">show definition</small>
+
+                            <span class="def84 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def84','expanded','collapsed');">hide definition:</small>
+                               use-cache=[cache=${cache.name}]
+                            </span>
+                        </li>
+                        <li id="e85" class="none">
+                              commit-transactions = true
+                        </li>
+                        <li id="e86" class="none">
+                              contains-ratio = 0
+                        </li>
+                        <li id="e87" class="none">
+                              cycle-time = 0.000 secs
+                        </li>
+                        <li id="e88" class="none">
+                              duration = 0.000 secs
+                        </li>
+                        <li>
+                           <b>entry-size = [100.0%: 4588]</b>
+                           <small class="def89 onClick expanded"
+                                 onclick="switch_class_by_class('def89','expanded','collapsed');">show definition</small>
+
+                            <span class="def89 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def89','expanded','collapsed');">hide definition:</small>
+                               ${entry.size}
+                            </span>
+                        </li>
+                        <li id="e90" class="none">
+                              exit-on-failure = false
+                        </li>
+                        <li id="e91" class="none">
+                              get-and-put-ratio = 0
+                        </li>
+                        <li id="e92" class="none">
+                              get-and-remove-ratio = 0
+                        </li>
+                        <li>
+                           <b>get-ratio = 1</b>
+                           <small class="def93 onClick expanded"
+                                 onclick="switch_class_by_class('def93','expanded','collapsed');">show definition</small>
+
+                            <span class="def93 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def93','expanded','collapsed');">hide definition:</small>
+                               1
+                            </span>
+                        </li>
+                        <li>
+                           <b>groups = [ client ]</b>
+                           <small class="def94 onClick expanded"
+                                 onclick="switch_class_by_class('def94','expanded','collapsed');">show definition</small>
+
+                            <span class="def94 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def94','expanded','collapsed');">hide definition:</small>
+                               client
+                            </span>
+                        </li>
+                        <li id="e95" class="none">
+                              iteration-property = null
+                        </li>
+                        <li>
+                           <b>key-generator = org.radargun.stages.cache.generators.StringKeyGenerator@75cd8043</b>
+                           <small class="def96 onClick expanded"
+                                 onclick="switch_class_by_class('def96','expanded','collapsed');">show definition</small>
+
+                            <span class="def96 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def96','expanded','collapsed');">hide definition:</small>
+                               string=[]
+                            </span>
+                        </li>
+                        <li>
+                           <b>key-selector = ConcurrentKeysSelector {numEntriesPerThread=0, totalEntries=10000 }</b>
+                           <small class="def97 onClick expanded"
+                                 onclick="switch_class_by_class('def97','expanded','collapsed');">show definition</small>
+
+                            <span class="def97 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def97','expanded','collapsed');">hide definition:</small>
+                               concurrent-keys=[total-entries=${num.entries}]
+                            </span>
+                        </li>
+                        <li id="e98" class="none">
+                              log-transaction-exceptions = true
+                        </li>
+                        <li id="e99" class="none">
+                              merge-thread-stats = false
+                        </li>
+                        <li>
+                           <b>num-operations = 10000</b>
+                           <small class="def100 onClick expanded"
+                                 onclick="switch_class_by_class('def100','expanded','collapsed');">show definition</small>
+
+                            <span class="def100 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def100','expanded','collapsed');">hide definition:</small>
+                               10000
+                            </span>
+                        </li>
+                        <li>
+                           <b>num-threads-per-node = 1</b>
+                           <small class="def101 onClick expanded"
+                                 onclick="switch_class_by_class('def101','expanded','collapsed');">show definition</small>
+
+                            <span class="def101 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def101','expanded','collapsed');">hide definition:</small>
+                               1
+                            </span>
+                        </li>
+                        <li>
+                           <b>put-ratio = 1</b>
+                           <small class="def102 onClick expanded"
+                                 onclick="switch_class_by_class('def102','expanded','collapsed');">show definition</small>
+
+                            <span class="def102 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def102','expanded','collapsed');">hide definition:</small>
+                               1
+                            </span>
+                        </li>
+                        <li id="e103" class="none">
+                              ramp-up = 0.000 secs
+                        </li>
+                        <li id="e104" class="none">
+                              remove-ratio = 0
+                        </li>
+                        <li id="e105" class="none">
+                              repeat-condition = null
+                        </li>
+                        <li id="e106" class="none">
+                              report-latency-as-service-time = false
+                        </li>
+                        <li id="e107" class="none">
+                              roles = null
+                        </li>
+                        <li id="e108" class="none">
+                              run-background = false
+                        </li>
+                        <li>
+                           <b>statistics = org.radargun.stats.CommonStatistics@10b9db7b</b>
+                           <small class="def109 onClick expanded"
+                                 onclick="switch_class_by_class('def109','expanded','collapsed');">show definition</small>
+
+                            <span class="def109 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def109','expanded','collapsed');">hide definition:</small>
+                               common=[]
+                            </span>
+                        </li>
+                        <li id="e110" class="none">
+                              synchronous-requests = false
+                        </li>
+                        <li>
+                           <b>test-name = writes-get</b>
+                           <small class="def111 onClick expanded"
+                                 onclick="switch_class_by_class('def111','expanded','collapsed');">show definition</small>
+
+                            <span class="def111 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def111','expanded','collapsed');">hide definition:</small>
+                               writes-get
+                            </span>
+                        </li>
+                        <li id="e112" class="none">
+                              think-time = 0.000 secs
+                        </li>
+                        <li id="e113" class="none">
+                              timeout = 0.000 secs
+                        </li>
+                        <li id="e114" class="none">
+                              total-threads = 0
+                        </li>
+                        <li id="e115" class="none">
+                              transaction-size = 1
+                        </li>
+                        <li id="e116" class="none">
+                              use-transactions = IF_TRANSACTIONAL
+                        </li>
+                        <li>
+                           <b>value-generator = org.radargun.stages.cache.generators.ByteArrayValueGenerator@9ef8eb7</b>
+                           <small class="def117 onClick expanded"
+                                 onclick="switch_class_by_class('def117','expanded','collapsed');">show definition</small>
+
+                            <span class="def117 collapsed"><small class="onClick"
+                               onClick="switch_class_by_class('def117','expanded','collapsed');">hide definition:</small>
+                               byte-array=[]
+                            </span>
+                        </li>
+                        <li id="e118" class="none">
+                              workers = null
+                        </li>
+               </ul>
+            </li>
+            <li>
+               <span class="onClick" onclick="switch_li_display('e119'); switch_li_display('e120'); switch_li_display('e121'); switch_li_display('e122'); ">
+                     MonitorStop
+               </span>
+               <ul>
+                        <li id="e119" class="none">
+                              exit-on-failure = false
+                        </li>
+                        <li id="e120" class="none">
+                              groups = null
+                        </li>
+                        <li id="e121" class="none">
+                              roles = null
+                        </li>
+                        <li id="e122" class="none">
+                              workers = null
+                        </li>
+               </ul>
+            </li>
+            <li>
+               <span class="onClick" onclick="switch_li_display('e123'); switch_li_display('e124'); switch_li_display('e125'); switch_li_display('e126'); switch_li_display('e127'); switch_li_display('e128'); switch_li_display('e129'); switch_li_display('e130'); switch_li_display('e131'); ">
+                     ServiceStop
+               </span>
+               <ul>
+                        <li id="e123" class="none">
+                              async = false
+                        </li>
+                        <li id="e124" class="none">
+                              delay-execution = 0.000 secs
+                        </li>
+                        <li id="e125" class="none">
+                              exit-on-failure = false
+                        </li>
+                        <li id="e126" class="none">
+                              graceful = true
+                        </li>
+                        <li id="e127" class="none">
+                              graceful-stop-timeout = 2 mins 0 secs
+                        </li>
+                        <li id="e128" class="none">
+                              groups = null
+                        </li>
+                        <li id="e129" class="none">
+                              roles = null
+                        </li>
+                        <li id="e130" class="none">
+                              wait-for-delayed = false
+                        </li>
+                        <li id="e131" class="none">
+                              workers = null
+                        </li>
+               </ul>
+            </li>
+            <li>
+               <span class="onClick" onclick="switch_li_display('e132'); switch_li_display('e133'); ">
+                     ScenarioDestroy
+               </span>
+               <ul>
+                        <li id="e132" class="none">
+                              exit-on-failure = false
+                        </li>
+                        <li id="e133" class="none">
+                              graceful-stop-timeout = 30.000 secs
+                        </li>
+               </ul>
+            </li>
+            <li>
+               <span class="onClick" onclick="switch_li_display('e134'); switch_li_display('e135'); switch_li_display('e136'); switch_li_display('e137'); switch_li_display('e138'); switch_li_display('e139'); switch_li_display('e140'); switch_li_display('e141'); ">
+                     ScenarioCleanup
+               </span>
+               <ul>
+                        <li id="e134" class="none">
+                              check-memory = true
+                        </li>
+                        <li id="e135" class="none">
+                              check-threads = true
+                        </li>
+                        <li id="e136" class="none">
+                              exit-on-failure = false
+                        </li>
+                        <li id="e137" class="none">
+                              heap-dump-dir = null
+                        </li>
+                        <li id="e138" class="none">
+                              memory-release-timeout = 30.000 secs
+                        </li>
+                        <li id="e139" class="none">
+                              memory-threshold = 95
+                        </li>
+                        <li id="e140" class="none">
+                              stop-timeout = 10.000 secs
+                        </li>
+                        <li id="e141" class="none">
+                              stop-unfinished-threads = true
+                        </li>
+               </ul>
+            </li>
+   </ul>
+   <hr/>
+   Generated on Jun 8, 2022, 11:41:04 AM by RadarGun
+   JDK: OpenJDK 64-Bit Server VM 11.0.15+9-LTS, Red Hat, Inc.
+   OS: Linux 3.10.0-1160.el7.x86_64, amd64
+</body>
+</html>
+
