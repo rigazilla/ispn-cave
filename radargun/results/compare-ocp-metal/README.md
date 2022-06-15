@@ -4,7 +4,7 @@
 
 # Results
 ## OCP
-[run1](results/compare-ocp-metal/ocp/run1/results/html/index.html), [net stats](results/compare-ocp-metal/ocp/run1/ping-stats.log)  
+[run1](ocp/run1/results/html/index.html), [net stats](ocp/run1/ping-stats.log)  
 [run2](results/compare-ocp-metal/ocp/run2/results/html/index.html),  [net stats](results/compare-ocp-metal/ocp/run2/ping-stats.log)  
 [run3](results/compare-ocp-metal/ocp/run3/results/html/index.html), [net stats](results/compare-ocp-metal/ocp/run3/ping-stats.log)  
 [run4](results/compare-ocp-metal/ocp/run4/results/html/index.html),  [net stats](results/compare-ocp-metal/ocp/run4/ping-stats.log)  
